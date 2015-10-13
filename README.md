@@ -1,8 +1,5 @@
-# FresherNote
+# RocketRide
 
-[Heroku link][heroku] **NB:** This should be a link to your production site
-
-[heroku]: http://www.herokuapp.com
 
 ## Minimum Viable Product
 
@@ -80,7 +77,7 @@ If time allows, I will implement the following features:
 
 - [ ] Non-standard time and date formats (e.g., stardate, galactic standard calendar, etc.)
 - [ ] User messaging
-- [ ] Allow users to post reviews of rockets 
+- [ ] Allow users to post reviews of rockets
 - [ ] Intergalactically appropriate transitions
 
 [phase-one]: ./docs/phases/phase1.md
@@ -88,5 +85,3 @@ If time allows, I will implement the following features:
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
-
-# RocketRide

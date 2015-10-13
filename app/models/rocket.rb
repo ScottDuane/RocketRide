@@ -5,7 +5,13 @@ class Rocket < ActiveRecord::Base
   belongs_to :user,
     foreign_key: :captain_id
   def create
+    @rocket = Rocket.new(rocket_params)
 
+    if @rocket.save
+      render json: @rocket
+    else
+      render @rocket[:errors].full_messages 
+    end
   end
 
   private

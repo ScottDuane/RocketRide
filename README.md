@@ -6,7 +6,7 @@
 RocketRide is a spaceship sharing service inspired by Couchsurfing built using React.js and Ruby on Rails.
 With RocketRide, users can:
 
-- [ ] Sign up, sign in and sign out
+- [X] Sign up, sign in and sign out
 - [ ] Search available rockets by start and end date, ship type, and captain's name
 - [ ] Make and cancel spaceship reservations
 - [ ] Flag rockets as "favorites" and view them later, after logging out and logging back in or after idling their computer

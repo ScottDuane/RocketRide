@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   validates :username, :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
+  has_many :rockets,
+    foreign_key: :captain_id
+
   attr_reader :password
 
   def password=(password)

@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151013171510) do
+ActiveRecord::Schema.define(version: 20151013175426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "rockets", force: :cascade do |t|
+    t.string   "rocket_name", null: false
+    t.string   "rocket_type", null: false
+    t.integer  "captain_id",  null: false
+    t.date     "avail_start", null: false
+    t.date     "avail_end",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false

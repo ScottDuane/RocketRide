@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if @user
       login(@user)
       # redirect_to 'static_pages/root'
-      render json: @user 
+      render json: @user
     else
       flash.now[:errors] = ["Invalid username or password"]
       render :new
@@ -19,6 +19,6 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to new_session_url
+    render json: {}
   end
 end

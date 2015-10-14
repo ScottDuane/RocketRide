@@ -7,6 +7,7 @@ window.ApiActions = {
   },
 
   receiveRocket: function(rocket) {
+    // debugger;
     AppDispatcher.dispatch ({
       actionType: RocketConstants.ROCKET_RECEIVED,
       rocket: rocket

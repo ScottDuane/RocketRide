@@ -11,12 +11,18 @@ window.ApiUtil = {
     });
   },
 
-  createRocket: function() {
+  createRocket: function(rocketData) {
     $.ajax ({
       url: 'api/rockets',
       method: 'post',
+      data: rocketData,
       success: function(rocket) {
+        console.log("success");
         ApiActions.receiveRocket(rocket);
+      },
+      failure: function(err) {
+        debugger;
+        console.log(err);
       }
     });
   },

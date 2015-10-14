@@ -4,6 +4,7 @@ window.RocketForm = React.createClass ({
   },
 
   createBench: function () {
+    // debugger;
     ApiUtil.createRocket(this.state);
   },
 
@@ -15,16 +16,18 @@ window.RocketForm = React.createClass ({
     this.setState({rocket_type: e.target.value});
   },
 
-  handleDescriptionChange: function() {
+  handleDescriptionChange: function(e) {
     this.setState({description: e.target.value});
   },
 
-  handleStartDateChange: function() {
-    this.setState({avail_start: e.target.value});
+  handleStartDateChange: function(e) {
+    var start = new Date(e.target.value);
+    this.setState({avail_start: start});
   },
 
-  handleEndDateChange: function() {
-    this.setState({avail_end: e.target.value});
+  handleEndDateChange: function(e) {
+    var end = new Date(e.target.value);
+    this.setState({avail_end: end});
   },
 
   render: function() {
@@ -51,10 +54,11 @@ window.RocketForm = React.createClass ({
           <input type="date" onChange={this.handleStartDateChange}/>
         </label>
 
-        <label> until 
+        <label> until
           <input type="date" onChange={this.handleEndDateChange}/>
         </label>
-        <input type="submit" value="Add Bench"/>
+        <br />
+        <input type="submit" value="Blastoff!"/>
       </form>
     </div>)
   }

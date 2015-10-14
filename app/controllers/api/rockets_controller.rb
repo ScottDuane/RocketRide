@@ -3,4 +3,13 @@ class Api::RocketsController < ApplicationController
     @rockets = Rocket.all
   end
 
+  def create
+    rocket = Rocket.create(rocket_params)
+    render json: rocket 
+  end
+
+  def rocket_params
+    params.permit(:rocket_name, :rocket_type, :captain_id, :avail_start, :avail_end)
+  end
+
 end

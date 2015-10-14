@@ -21,11 +21,20 @@
       RocketStore.removeListener(ROCKETS_INDEX_CHANGE_EVENT, callback);
     },
 
+    addRocket: function(rocket) {
+      _rockets.push(rocket);
+    },
+
     dispatcherID: AppDispatcher.register(function(payload) {
       // debugger;
       switch(payload.actionType) {
       case RocketConstants.ROCKETS_RECEIVED:
         RocketStore.resetRockets(payload.rockets);
+        RocketStore.emit(ROCKETS_INDEX_CHANGE_EVENT);
+        break;
+
+      case RocketConstants.ROCKET_RECEIVED:
+        RocketStore.addRocket(rocket);
         RocketStore.emit(ROCKETS_INDEX_CHANGE_EVENT);
         break;
       }

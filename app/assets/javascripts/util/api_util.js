@@ -11,6 +11,16 @@ window.ApiUtil = {
     });
   },
 
+  createRocket: function() {
+    $.ajax ({
+      url: 'api/rockets',
+      method: 'post',
+      success: function(rocket) {
+        ApiActions.receiveRocket(rocket);
+      }
+    });
+  },
+
   logOut: function() {
     $.ajax ({
       url: '/session/',

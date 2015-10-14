@@ -16,8 +16,17 @@
 // }
 
 ul, li {
-  display: inline; 
+  display: inline;
   padding: 10px;
+}
+
+.jumbotron {
+  position: relative;
+  background: #000 url("http://apod.nasa.gov/apod/image/1510/GegenscheinEclipse_Horalek_1080_annotated.jpg") center center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

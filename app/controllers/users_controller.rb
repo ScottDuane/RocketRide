@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       login(@user)
-      render json: @user 
+      redirect_to :root  
     else
       flash.now[:errors] = @user.errors.full_messages
       render :new

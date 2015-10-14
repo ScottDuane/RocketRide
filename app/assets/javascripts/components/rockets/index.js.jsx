@@ -9,10 +9,25 @@ window.RocketIndex = React.createClass ({
     ApiUtil.logOut();
   },
 
-  render: function() {
-    return (<div>
-      <Navbar />
+  componentDidMount: function() {
+    RocketStore.addIndexChangeListener(this._onChange);
+    ApiUtil.fetchAllRockets();
+  },
 
+  _onChange: function() {
+    this.setState({rockets: RocketStore.all()});
+  },
+  render: function() {
+    // debugger;
+      console.log(this.state.rockets);
+    return (<div>
+
+      <Navbar />
+      <ul>
+        {this.state.rockets.map(function(rocket){
+          return (<RocketIndexItem rocket={rocket} />);
+        })}
+      </ul>
     Rockets go here
 
       <br />

@@ -12,7 +12,7 @@ window.ApiUtil = {
     $.ajax ({
       url: '/session/',
       method: 'delete',
-      success: function() {
+      success: function(data) {
         window.location='/session/new';
       }
     });

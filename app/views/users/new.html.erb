@@ -1,14 +1,45 @@
-<h2> Sign Up </h2>
+<div class="container">
+    <div id="signupbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info" >
+          <div class="panel-heading">
+              <div class="panel-title">Sign Up</div>
+              <div style="float:right; font-size: 80%; position: relative; top:-10px"></div>
+          </div>
 
+          <div style="padding-top:30px" class="panel-body" >
 
-<form action="<%= users_url %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label for="username">Username</label>
-  <input type="text" name="user[username]" id="username">
-  <label for="password">Password</label>
-  <input type="password" name="user[password]" id="password">
-  <input type="submit" value="Create Account">
-</form>
+          <div style="display:none" id="signup-alert" class="alert alert-danger col-sm-12"></div>
 
-<%= link_to "Sign In", new_session_url %>
-<%= render "layouts/errors" %>
+          <form id="signupform" action="<%= users_url %>" method="post" class="form-horizontal" role="form">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+              <div style="margin-bottom: 25px" class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                  <input id="signup-username" type="text" class="form-control" name="user[username]" placeholder="Username">
+              </div>
+
+              <div style="margin-bottom: 25px" class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                  <input id="signup-password" type="password" class="form-control" name="user[password]" placeholder="Password">
+              </div>
+                  <div style="margin-top:10px" class="form-group">
+                      <!-- Button -->
+                      <div class="col-sm-12 controls">
+                        <input type="submit" value="Create Account">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-md-12 control">
+                          <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                              Already have an account?
+                              <%= link_to "Sign In Here", new_session_url %>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <%= render "layouts/errors" %>
+                  </div>
+              </form>
+          </div>
+      </div>
+</div>

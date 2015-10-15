@@ -7,5 +7,6 @@ $(function() {
     <IndexRoute component={RocketIndex} />
     <Route path='/' component={RocketIndex} />
     <Route path='rockets/new' component={RocketForm} />
+    <Route path='rockets/:id' component={RocketShow} />
   </Router>, document.getElementById('content'));
 });

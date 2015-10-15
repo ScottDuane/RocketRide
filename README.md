@@ -80,6 +80,7 @@ If time allows, I will implement the following features:
 - [ ] User messaging
 - [ ] Allow users to post reviews of rockets
 - [ ] Intergalactically appropriate transitions
+- [ ] Add a sort-by feature 
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md

@@ -31,6 +31,7 @@ window.RocketForm = React.createClass ({
   },
 
   render: function() {
+    var Link = ReactRouter.Link;
     return(<div>
       <form onSubmit={this.createBench}>
         <label>Rocket Name:
@@ -60,6 +61,8 @@ window.RocketForm = React.createClass ({
         <br />
         <input type="submit" value="Blastoff!"/>
       </form>
+
+      <Link to='/'>Back to Rockets</Link>
     </div>)
   }
 });

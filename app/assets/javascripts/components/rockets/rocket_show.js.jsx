@@ -1,13 +1,15 @@
 window.RocketShow = React.createClass ({
-  componentDidMount: function() {
+  getInitialState: function() {
     this.rocket = this.findRocketById(this.props.params.id);
     this.captain = this.findCaptainById(this.rocket.captain_id);
+    return {};
   },
 
   findRocketById: function(id) {
     var myRocket = null;
     RocketStore.all().forEach(function(rocket) {
-      if(rocket.id === id) {
+      // debugger;
+      if(rocket.id === parseInt(id)) {
         myRocket = rocket;
       }
     });
@@ -16,31 +18,34 @@ window.RocketShow = React.createClass ({
   },
 
   findCaptainById: function(id) {
-    var myCaptain = null;
+    var captain = null;
     UserStore.all().forEach(function(user) {
-      if(user.id === id) {
-        myCaptain = user;
+      if(user.id === parseInt(id)) {
+        captain = user;
       }
     });
-
-    return myCaptain;
+    debugger;
+    return captain;
   },
 
   render: function() {
+    var Link = ReactRouter.Link;
     return (<div>
       <ul>
         <li>
-          Fly with {this.captain} on the {this.rocket.rocket_name}!
+          Fly with Captain Blankety Blank on the {this.rocket.rocket_name}!
         </li>
-
+        <br />
         <li>
           Available from {this.rocket.avail_start} to {this.rocket.avail_end}.
         </li>
-
+        <br />
         <li>
           <img src={this.rocket.image_url} height='150px' width='150px' />
         </li>
       </ul>
-    </div>)
+      <br />
+      <Link to="/">Back to All Rockets</Link>
+    </div>);
   }
-})
+});

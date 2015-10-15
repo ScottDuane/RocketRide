@@ -34,5 +34,14 @@ window.ApiUtil = {
         window.location='/session/new';
       }
     });
+  },
+
+  fetchAllUsers: function() {
+    $.ajax ({
+      url: 'api/users',
+      success: function(users) {
+        ApiActions.receiveUsers(users);
+      }
+    });
   }
 };

@@ -1,11 +1,17 @@
+/* global ApiUtil */
+
 window.RocketForm = React.createClass ({
+
+  mixins: [React.addons.LinkedStateMixin],
+
   getInitialState: function() {
       return {captain_id: window.CURRENT_USER_ID}
   },
 
-  createBench: function () {
+  createRocket: function () {
     // debugger;
     ApiUtil.createRocket(this.state);
+    this.props.history.pushState(null, '/');
   },
 
   handleNameChange: function(e) {
@@ -33,7 +39,7 @@ window.RocketForm = React.createClass ({
   render: function() {
     var Link = ReactRouter.Link;
     return(<div>
-      <form onSubmit={this.createBench}>
+      <form onSubmit={this.createRocket}>
         <label>Rocket Name:
           <input type="text" onChange={this.handleNameChange}/>
         </label>

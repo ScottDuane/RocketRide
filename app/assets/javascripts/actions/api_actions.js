@@ -12,5 +12,12 @@ window.ApiActions = {
       actionType: RocketConstants.ROCKET_RECEIVED,
       rocket: rocket
     });
+  },
+
+  receiveAllUsers: function(users) {
+    AppDispatcher.dispatch({
+      actionType: UserConstants.USERS_RECEIVED,
+      users: users
+    });
   }
 };

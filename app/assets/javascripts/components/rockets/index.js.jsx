@@ -12,6 +12,7 @@ window.RocketIndex = React.createClass ({
   componentDidMount: function() {
     RocketStore.addIndexChangeListener(this._onChange);
     ApiUtil.fetchAllRockets();
+    ApiUtil.fetchAllUsers();
   },
 
   _onChange: function() {

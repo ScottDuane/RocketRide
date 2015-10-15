@@ -40,7 +40,7 @@ window.ApiUtil = {
     $.ajax ({
       url: 'api/users',
       success: function(users) {
-        ApiActions.receiveUsers(users);
+        ApiActions.receiveAllUsers(users);
       }
     });
   }

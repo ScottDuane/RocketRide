@@ -1,7 +1,9 @@
 window.RocketShow = React.createClass ({
   getInitialState: function() {
+    // ApiUtil.fetchAllUsers();
+    this.captain = "Captain Blankety Blank";
     this.rocket = this.findRocketById(this.props.params.id);
-    this.captain = this.findCaptainById(this.rocket.captain_id);
+    this.findCaptainById(this.rocket.captain_id);
     return {};
   },
 
@@ -16,24 +18,28 @@ window.RocketShow = React.createClass ({
 
     return myRocket;
   },
-
+  //
   findCaptainById: function(id) {
+
     var captain = null;
     UserStore.all().forEach(function(user) {
-      if(user.id === parseInt(id)) {
-        captain = user;
+      if(user.id === this.rocket.captain_id) {
+        this.captain = user.username;
       }
-    });
-    debugger;
-    return captain;
+    }.bind(this));
   },
 
   render: function() {
+    // debugger;
+
+    // debugger;
+
+
     var Link = ReactRouter.Link;
     return (<div>
       <ul>
         <li>
-          Fly with Captain Blankety Blank on the {this.rocket.rocket_name}!
+          Fly with {this.captain} on the {this.rocket.rocket_name}!
         </li>
         <br />
         <li>

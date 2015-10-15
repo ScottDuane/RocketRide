@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-
+  var USERS_CHANGE_EVENT = "USERS_CHANGE_EVENT";
   var _users = [];
   window.UserStore = $.extend({}, EventEmitter.prototype, {
     all: function() {

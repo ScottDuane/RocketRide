@@ -1,7 +1,6 @@
 class RocketsController < ApplicationController
   def create
     @rocket = Rocket.new(rocket_params)
-    puts "params are #{rocket_params}" 
     if @rocket.save
       render json: @rocket
     else

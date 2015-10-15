@@ -2,7 +2,7 @@ window.RocketIndexItem = React.createClass ({
   render: function() {
     var Link = ReactRouter.Link;
     var showURL = "rockets/"+this.props.rocket.id;
-    var imgURL = this.props.imgURL || 'assets/spaceship_default.jpeg';
+    var imgURL = this.props.rocket.image_url || 'assets/spaceship_default.jpeg';
     return (
 
       <div className="rocket-item">

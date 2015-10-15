@@ -13,3 +13,10 @@ Look into this tomorrow.
 - How to get images into the RocketForm?  Not sure on this.  Seems hard.
 - HISTORIESSSS make no sense.  
 - Navbar appears but looks bad, and is not above the h2.  
+
+Day 3 notes:
+
+- Next step is to start reservation components.  List of current user's reservations (ReservationIndex),
+ReservationForm on each rocket's show page.
+- Still no styling on Navbar.  Address this tomorrow and ask about adding filters.  Maybe a filter component?  
+- 

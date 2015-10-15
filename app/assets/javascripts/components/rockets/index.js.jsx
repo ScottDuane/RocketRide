@@ -20,14 +20,13 @@ window.RocketIndex = React.createClass ({
   render: function() {
     // debugger;
     var Link = ReactRouter.Link;
-    return (<div>
+    return (<div className="rocket-index">
 
       <Navbar />
-      <ul>
+
         {this.state.rockets.map(function(rocket){
           return (<RocketIndexItem rocket={rocket} />);
         })}
-      </ul>
       <Link to='rockets/new'>Create a New Rocket</Link>
       <br />
       <button onClick={this.logOut}>Log Out</button>

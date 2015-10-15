@@ -4,11 +4,11 @@ window.RocketIndexItem = React.createClass ({
     var showURL = "rockets/"+this.props.rocket.id;
     return (
       <div className="rocket-item">
-        <li>{this.props.rocket.rocket_name} <br />
+        {this.props.rocket.rocket_name} <br />
             {this.props.rocket.rocket_type} <br />
             <img src={this.props.rocket.image_url} alt='' height="75" width="75" />
             <Link to={showURL}>Show me this rocket!</Link>
-        </li>
+        
       </div>)
   }
 });

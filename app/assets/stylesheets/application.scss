@@ -34,9 +34,24 @@ ul, li {
 }
 
 .rocket-item {
+  float: left;
   padding: 10px;
-  height: 100px;
-  width: 150px;
+  height: 200px;
+  width: 300px;
+  border: #000 solid 1px;
+  margin: 5px;
+}
+
+.rocket-index {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

@@ -21,7 +21,6 @@ window.ApiUtil = {
         ApiActions.receiveRocket(rocket);
       },
       failure: function(err) {
-        debugger;
         console.log(err);
       }
     });

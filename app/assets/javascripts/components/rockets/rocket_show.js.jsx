@@ -33,7 +33,7 @@ window.RocketShow = React.createClass ({
     // debugger;
 
     // debugger;
-
+    var imgURL = this.rocket.image_url || 'assets/spaceship_default.jpeg';
 
     var Link = ReactRouter.Link;
     return (<div>
@@ -47,7 +47,7 @@ window.RocketShow = React.createClass ({
         </li>
         <br />
         <li>
-          <img src={this.rocket.image_url} height='150px' width='150px' />
+          <img src={imgURL} height='150px' width='150px' />
         </li>
       </ul>
       <br />

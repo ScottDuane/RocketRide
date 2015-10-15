@@ -1,24 +1,11 @@
 class Rocket < ActiveRecord::Base
-  validates :rocket_name, :captain_id, :rocket_type, :avail_start, :avail_end, presence: true
+  validates :rocket_name, :captain_id, :rocket_type, :avail_start, :avail_end, :image_url, presence: true
   validate :start_date_is_before_end_date
-  after_initialize :set_default_photo
+  # after_initialize :set_default_photo
 
   belongs_to :user,
     foreign_key: :captain_id
-  def create
-    @rocket = Rocket.new(rocket_params)
 
-    if @rocket.save
-      render json: @rocket
-    else
-      render @rocket[:errors].full_messages
-    end
-  end
-
-  private
-  def rocket_params
-    params.require(:rocket).permit(:rocket_name, :rocket_type, :captain_id, :avail_start, :avail_end)
-  end
 
   def start_date_is_before_end_date
     if self.avail_start > self.avail_end
@@ -26,8 +13,8 @@ class Rocket < ActiveRecord::Base
     end
   end
 
-  def set_default_photo
-    self.image_url ||= 'spaceship_default.jpeg'
-    self.save!
-  end
+  # def set_default_photo
+  #   self.image_url ||= 'spaceship_default.jpeg'
+  #   self.save!
+  # end
 end

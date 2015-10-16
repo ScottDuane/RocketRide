@@ -19,5 +19,19 @@ window.ApiActions = {
       actionType: UserConstants.USERS_RECEIVED,
       users: users
     });
+  },
+
+  receiveReservation: function(reservation) {
+    AppDispatcher.dispatch({
+      actionType: ReservationConstants.RESERVATION_RECEIVED,
+      reservation: reservation
+    });
+  },
+
+  updateReservation: function(reservation) {
+    AppDispatcher.dispatch({
+      actionType: ReservationConstants.RESERVATION_UPDATED,
+      reservation: reservation
+    });
   }
 };

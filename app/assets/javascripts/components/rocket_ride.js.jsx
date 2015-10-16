@@ -10,5 +10,6 @@ $(function() {
     <Route path='/' component={RocketIndex} />
     <Route path='rockets/new' component={RocketForm} />
     <Route path='rockets/:id' component={RocketShow} />
+    <Route path='users/:id' component={UserProfile} />
   </Router>, document.getElementById('content'));
 });

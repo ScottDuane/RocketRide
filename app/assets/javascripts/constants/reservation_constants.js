@@ -1,0 +1,3 @@
+var ReservationConstants = {
+  RESERVATION_RECEIVED: "RESERVATION_RECEIVED"
+}

@@ -21,6 +21,7 @@ window.RocketIndex = React.createClass ({
   render: function() {
     // debugger;
     var Link = ReactRouter.Link;
+    var userURL = 'users/'+CURRENT_USER_ID;
     return (<div className="rocket-index">
 
       <Navbar />
@@ -30,7 +31,7 @@ window.RocketIndex = React.createClass ({
         })}
       <br />
       <button onClick={this.logOut}>Log Out</button>
-
+      <Link to={userURL}>View Your Profile</Link>
   </div>);
   }
 });

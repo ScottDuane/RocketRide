@@ -82,6 +82,7 @@ If time allows, I will implement the following features:
 - [ ] Intergalactically appropriate transitions
 - [ ] Add a sort-by feature
 - [ ] Make transitions nicer  
+- [ ] Allow multiple photos for each rocket 
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md

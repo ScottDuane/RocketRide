@@ -17,7 +17,6 @@ window.ApiUtil = {
       method: 'post',
       data: rocketData,
       success: function(rocket) {
-        console.log("success");
         ApiActions.receiveRocket(rocket);
       },
       failure: function(err) {
@@ -41,6 +40,26 @@ window.ApiUtil = {
       url: 'api/users',
       success: function(users) {
         ApiActions.receiveAllUsers(users);
+      }
+    });
+  },
+
+  createReservation: function() {
+    $.ajax ({
+      url: 'api/reservations',
+      method: 'post',
+      success: function(reservation) {
+        ApiActions.receiveReservation(reservation);
+      }
+    });
+  },
+
+  approveReservation: function(reservation) {
+    $.ajax ({
+      url: 'api/reservations/' + reservation.id,
+      method: 'patch',
+      success: function(reservation) {
+        ApiActions.updateReservation(reservation);
       }
     });
   }

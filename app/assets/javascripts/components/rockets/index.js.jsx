@@ -28,7 +28,6 @@ window.RocketIndex = React.createClass ({
         {this.state.rockets.map(function(rocket){
           return (<RocketIndexItem rocket={rocket} />);
         })}
-      <Link to='rockets/new'>Create a New Rocket</Link>
       <br />
       <button onClick={this.logOut}>Log Out</button>
 

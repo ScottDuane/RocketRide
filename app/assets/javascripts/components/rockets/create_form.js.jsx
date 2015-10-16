@@ -53,6 +53,7 @@ window.RocketForm = React.createClass ({
   render: function() {
     var Link = ReactRouter.Link;
     return(<div>
+      <Navbar />
       <form onSubmit={this.createRocket}>
         <label>Rocket Name:
           <input type="text" onChange={this.handleNameChange}/>
@@ -80,7 +81,7 @@ window.RocketForm = React.createClass ({
         </label>
 
         <br />
-        <button onClick={this.handlePhotoUpload}>Upload Photo</button>
+          <button onClick={this.handlePhotoUpload}>Upload Photo</button>
         <br />
         <input type="submit" value="Blastoff!"/>
       </form>

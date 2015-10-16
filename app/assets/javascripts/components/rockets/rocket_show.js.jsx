@@ -37,6 +37,7 @@ window.RocketShow = React.createClass ({
 
     var Link = ReactRouter.Link;
     return (<div>
+    <Navbar />
       <ul>
         <li>
           Fly with {this.captain} on the {this.rocket.rocket_name}!
@@ -50,8 +51,6 @@ window.RocketShow = React.createClass ({
           <img src={imgURL} height='150px' width='150px' />
         </li>
       </ul>
-      <br />
-      <Link to="/">Back to All Rockets</Link>
     </div>);
   }
 });

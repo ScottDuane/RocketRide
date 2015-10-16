@@ -11,6 +11,17 @@
       _users = users;
     },
 
+    findById: function(id) {
+      var this_user = null;
+      _users.forEach(function(user) {
+        if (user.id === id) {
+          this_user = user;
+        }
+      });
+
+      return this_user;
+    },
+
     addUserChangeListener: function(callback) {
       UserStore.on(USERS_CHANGE_EVENT, callback);
     },

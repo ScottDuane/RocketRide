@@ -86,7 +86,6 @@ window.RocketForm = React.createClass ({
         <input type="submit" value="Blastoff!"/>
       </form>
 
-      <Link to='/'>Back to Rockets</Link>
     </div>)
   }
 });

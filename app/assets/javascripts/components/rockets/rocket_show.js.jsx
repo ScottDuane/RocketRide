@@ -18,6 +18,8 @@ window.RocketShow = React.createClass ({
 
     return myRocket;
   },
+
+
   //
   findCaptainById: function(id) {
 
@@ -29,15 +31,19 @@ window.RocketShow = React.createClass ({
     }.bind(this));
   },
 
+
   render: function() {
     // debugger;
 
     // debugger;
     var imgURL = this.rocket.image_url || 'assets/spaceship_default.jpeg';
+    // var Lightbox = React.Lightbox;
+    // var LightboxTrigger = React.LightboxTrigger;
+    // var LightboxModal = React.LightboxModal;
 
     var Link = ReactRouter.Link;
     return (<div>
-    <Navbar />
+      <Navbar />
       <ul>
         <li>
           Fly with {this.captain} on the {this.rocket.rocket_name}!
@@ -50,7 +56,17 @@ window.RocketShow = React.createClass ({
         <li>
           <img src={imgURL} height='150px' width='150px' />
         </li>
+
       </ul>
+
+      <Lightbox>
+        <LightboxTrigger>
+            <button>Reserve Rocket</button>
+        </LightboxTrigger>
+        <LightboxModal>
+            <ReservationForm rocket={this.rocket}/>
+        </LightboxModal>
+    </Lightbox>
     </div>);
   }
 });

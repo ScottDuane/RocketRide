@@ -19,4 +19,5 @@
 //= require react_ujs
 //= require bootstrap
 //= require reactrouter.min.js
+//= require react-lightbox
 //= require_tree .

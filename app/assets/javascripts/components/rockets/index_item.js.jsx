@@ -5,7 +5,7 @@ window.RocketIndexItem = React.createClass ({
     var imgURL = this.props.rocket.image_url || 'assets/spaceship_default.jpeg';
     return (
 
-      <div className="rocket-item">
+      <div class="col-md-4" className="rocket-item">
         {this.props.rocket.rocket_name} <br />
             {this.props.rocket.rocket_type} <br />
           <img src={imgURL} alt='' height="75" width="75" />

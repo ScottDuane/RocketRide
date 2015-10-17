@@ -3,6 +3,7 @@ window.ApiUtil = {
     $.ajax ({
       url: 'api/rockets',
       success: function(rockets) {
+        console.log("success");
         ApiActions.receiveAllRockets(rockets);
       },
       failure: function(err) {
@@ -44,12 +45,16 @@ window.ApiUtil = {
     });
   },
 
-  createReservation: function() {
+  createReservation: function(resData) {
     $.ajax ({
       url: 'api/reservations',
       method: 'post',
+      data: resData,
       success: function(reservation) {
         ApiActions.receiveReservation(reservation);
+      },
+      failure: function(err) {
+        console.log(err);
       }
     });
   },

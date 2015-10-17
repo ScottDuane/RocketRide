@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   has_many :rockets,
     foreign_key: :captain_id
 
+  has_many :reservations,
+    foreign_key: :creator_id
+    
   attr_reader :password
 
   def password=(password)

@@ -3,6 +3,7 @@
 window.Navbar = React.createClass({
   getInitialState: function() {
     ApiUtil.fetchAllUsers();
+    ApiUtil.fetchAllRockets();
     this.current_user = UserStore.findById(window.CURRENT_USER_ID);
     return {};
   },
@@ -12,20 +13,7 @@ window.Navbar = React.createClass({
   },
 
   render: function () {
-
-    var button = (
-      <li className="dropdown">
-          <a href="#" className="dropdown-toggle"
-                      data-toggle="dropdown"
-                      role="button"
-                      aria-haspopup="true"
-                      aria-expanded="false">Current Username<span className="caret"></span></a>
-          <ul className="dropdown-menu">
-            <li><a>Your profile</a></li>
-            <li><a onClick={this.logOutClickHandler}>Log out</a></li>
-          </ul>
-      </li>
-    );
+    var userURL = "#/users/"+window.CURRENT_USER_ID;
 
     return (
       <nav className="navbar navbar-default">
@@ -59,9 +47,19 @@ window.Navbar = React.createClass({
                 <button className="navbar-links no-border">All Rockets</button>
               </a>
             </li>
+
             <li>
-              {button}
+              <a href="#">
+                <button className="navbar-links no-border" onClick={this.logOutClickHandler}>Log Out</button>
+              </a>
+          </li>
+
+            <li>
+              <a className="profile-link" href={userURL}>
+                <button className="navbar-links no-border">Your Profile</button>
+              </a>
             </li>
+
           </ul>
         </div>
 

@@ -1,8 +1,9 @@
 window.RocketShow = React.createClass ({
   getInitialState: function() {
     // ApiUtil.fetchAllUsers();
+    debugger;
     this.captain = "Captain Blankety Blank";
-    this.rocket = this.findRocketById(this.props.params.id);
+    this.rocket = this.findRocketById(parseInt(this.props.params.id));
     this.findCaptainById(this.rocket.captain_id);
     return {};
   },

@@ -25,13 +25,13 @@ window.RocketIndex = React.createClass ({
     return (<div className="rocket-index">
 
       <Navbar />
+        <div class="row">
+          {this.state.rockets.map(function(rocket){
+            return (<RocketIndexItem rocket={rocket} />);
+          })}
+        </div>
 
-        {this.state.rockets.map(function(rocket){
-          return (<RocketIndexItem rocket={rocket} />);
-        })}
-      <br />
-      <button onClick={this.logOut}>Log Out</button>
-      <Link to={userURL}>View Your Profile</Link>
+
   </div>);
   }
 });

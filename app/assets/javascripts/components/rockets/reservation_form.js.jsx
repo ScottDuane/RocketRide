@@ -1,16 +1,17 @@
 var ReservationForm = React.createClass ({
   getInitialState: function() {
-    return {creator_id: CURRENT_USER_ID, rocket_id: this.props.rocket.id}
+    return {rocket_id: this.props.rocket.id, status: 'pending', start_date: null, end_date: null}
   },
   handleStartChange: function(e) {
-    this.setState({startDate: e.target.value});
+    this.setState({start_date: e.target.value});
   },
 
   handleEndChange: function(e) {
-    this.setState({endDate: e.target.value});
+    this.setState({end_date: e.target.value});
   },
 
-  handleSubmit: function() {
+  handleSubmit: function(e) {
+    e.preventDefault();
     ApiUtil.createReservation(this.state);
   },
 

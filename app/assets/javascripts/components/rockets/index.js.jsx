@@ -26,6 +26,9 @@ window.RocketIndex = React.createClass ({
 
       <Navbar />
         <div class="row">
+          <FilterForm />
+        </div>
+        <div class="row">
           {this.state.rockets.map(function(rocket){
             return (<RocketIndexItem rocket={rocket} />);
           })}

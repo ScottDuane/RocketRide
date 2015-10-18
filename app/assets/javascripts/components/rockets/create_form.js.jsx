@@ -54,37 +54,43 @@ window.RocketForm = React.createClass ({
     var Link = ReactRouter.Link;
     return(<div>
       <Navbar />
-      <form onSubmit={this.createRocket}>
-        <label>Rocket Name:
-          <input type="text" onChange={this.handleNameChange}/>
-        </label>
 
-        <br />
+        <div className="create-form">
+        <form className="form-inline" onSubmit={this.createRocket}>
+          <div class="row">
+            <div className="col-md-4">
+                <label for="rocket-name">Rocket Name</label>
+                <input type="text" className="form-control" id="rocket-name" placeholder="U.S.S. Enterprise" onChange={this.handleNameChange}/>
+            </div>
+            <div className="col-md-4">
+                <label for="rocket-type">Rocket Type</label>
+                <input type="text" className="form-control" id="rocket-type" placeholder="Galaxy class starship" onChange={this.handleTypeChange}/>
+            </div>
 
-        <label>Rocket Type:
-          <input type="text" onChange={this.handleTypeChange}/>
-        </label>
+          </div>
+          <div className="row">
+            <div className="col-md-4">
+                <label for="rocket-desc">Description</label>
+                <input type="text" className="form-control" id="rocket-desc" placeholder="Some info on your rocket" onChange={this.handleDescriptionChange}/>
+            </div>
+          </div>
 
-        <br />
-
-        <label>Description:
-          <input type="text" onChange={this.handleDescriptionChange}/>
-        </label>
-
-        <br />
-        <label>Available beginning
-          <input type="date" onChange={this.handleStartDateChange}/>
-        </label>
-
-        <label> until
-          <input type="date" onChange={this.handleEndDateChange}/>
-        </label>
-
-        <br />
-          <button onClick={this.handlePhotoUpload}>Upload Photo</button>
-        <br />
-        <input type="submit" value="Blastoff!"/>
-      </form>
+          <div className="row">
+            <div className="col-md-4">
+                <label for="rocket-start">Available from</label>
+                <input type="date" className="form-control" id="rocket-start" onChange={this.handleStartDateChange} />
+            </div>
+            <div className="col-md-4">
+                <label for="rocket-end">until</label>
+                <input type="date" className="form-control" id="rocket-end" onChange={this.handleEndDateChange}/>
+            </div>
+          </div>
+          <div className="row">
+            <button type="submit" className="btn btn-primary">List your rocket!</button>
+              <button onClick={this.handlePhotoUpload}>Upload Photo</button>
+          </div>
+        </form>
+      </div>
 
     </div>)
   }

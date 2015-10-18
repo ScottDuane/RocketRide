@@ -1,7 +1,7 @@
 window.RocketShow = React.createClass ({
   getInitialState: function() {
     // ApiUtil.fetchAllUsers();
-    debugger;
+    // debugger;
     this.captain = "Captain Blankety Blank";
     this.rocket = this.findRocketById(parseInt(this.props.params.id));
     this.findCaptainById(this.rocket.captain_id);
@@ -34,17 +34,13 @@ window.RocketShow = React.createClass ({
 
 
   render: function() {
-    // debugger;
-
-    // debugger;
     var imgURL = this.rocket.image_url || 'assets/spaceship_default.jpeg';
-    // var Lightbox = React.Lightbox;
-    // var LightboxTrigger = React.LightboxTrigger;
-    // var LightboxModal = React.LightboxModal;
 
     var Link = ReactRouter.Link;
     return (<div>
       <Navbar />
+
+      <img src={imgURL} className="rocket-profile-pic" />
       <ul>
         <li>
           Fly with {this.captain} on the {this.rocket.rocket_name}!
@@ -54,9 +50,6 @@ window.RocketShow = React.createClass ({
           Available from {this.rocket.avail_start} to {this.rocket.avail_end}.
         </li>
         <br />
-        <li>
-          <img src={imgURL} height='150px' width='150px' />
-        </li>
 
       </ul>
 

@@ -22,7 +22,7 @@
 
     ownedReservations: function(id) {
       var owned = [];
-      _reservations.forEach(function(reservation) {
+      ReservationStore.all().forEach(function(reservation) {
         var rocket = RocketStore.findById(reservation.rocket_id);
         if(rocket.captain_id === id) {
           owned.push(reservation);
@@ -56,10 +56,14 @@
       ReservationStore.resetReservations(updated);
     },
 
+    addReservation: function(reservation) {
+      _reservations.push(reservation);
+    },
+    
     dispatcherId: AppDispatcher.register(function(payload) {
       switch(payload.actionType) {
         case ReservationConstants.RESERVATION_RECEIVED:
-          ReservationStore.resetReservations(payload.reservations);
+          ReservationStore.addReservation(payload.reservation);
           ReservationStore.emit(RESERVATION_INDEX_CHANGE);
           break;
         case ReservationConstants.RESERVATIONS_RECEIVED:
@@ -74,7 +78,6 @@
           ReservationStore.deleteReservation(payload.reservation);
           ReservationStore.emit(RESERVATION_INDEX_CHANGE);
           break;
-
       }
     })
   });

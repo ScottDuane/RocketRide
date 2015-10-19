@@ -29,6 +29,7 @@ window.ApiActions = {
   },
 
   receiveReservation: function(reservation) {
+    // debugger;
     AppDispatcher.dispatch({
       actionType: ReservationConstants.RESERVATION_RECEIVED,
       reservation: reservation

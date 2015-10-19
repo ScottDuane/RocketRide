@@ -60,6 +60,7 @@ window.ApiUtil = {
       method: 'post',
       data: resData,
       success: function(reservation) {
+        // debugger;
         ApiActions.receiveReservation(reservation);
       },
       failure: function(err) {

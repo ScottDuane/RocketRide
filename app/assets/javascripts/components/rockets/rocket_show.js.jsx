@@ -52,13 +52,14 @@ window.RocketShow = React.createClass ({
         <br />
 
       </ul>
+      <ButtonWithDialog />
 
       <Lightbox>
         <LightboxTrigger>
             <button>Reserve Rocket</button>
         </LightboxTrigger>
         <LightboxModal>
-            <ReservationForm rocket={this.rocket}/>
+            <ReservationForm rocket={this.rocket} />
         </LightboxModal>
     </Lightbox>
     </div>);

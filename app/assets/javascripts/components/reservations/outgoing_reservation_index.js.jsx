@@ -1,8 +1,28 @@
 var OutgoingReservationIndex = React.createClass ({
+  getInitialState: function() {
+    ApiUtil.fetchAllReservations();
+    var reservations = ReservationStore.createdReservations(CURRENT_USER_ID);
+    return {reservations: reservations};
+  },
+
+  componentDidMount: function() {
+    ReservationStore.addIndexChangeListener(this._onChange);
+  },
+
+  componentWillUnmount: function() {
+    ReservationStore.removeIndexChangeListener(this._onChange);
+  },
+
+  _onChange: function() {
+    this.setState({reservations: ReservationStore.createdReservations(CURRENT_USER_ID)});
+  },
+  
   render: function() {
     return (
     <div>
-      <h4>reservations</h4>
+      {this.state.reservations.map(function(reservation){
+        return (<OutgoingIndexItem reservation={reservation} />);
+      })}
     </div>)
   }
 })

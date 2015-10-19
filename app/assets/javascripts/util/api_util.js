@@ -72,7 +72,8 @@ window.ApiUtil = {
   cancelReservation: function(reservation) {
     $.ajax ({
       url: 'api/reservations/'+reservation.id,
-      method: 'delete',
+      method: 'patch',
+      data: JSON.stringify({status: 'cancelled'}),
       success: function(reservation) {
         ApiActions.deleteReservation(reservation);
 

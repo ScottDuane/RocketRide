@@ -10,6 +10,10 @@ var IncomingReservationIndex = React.createClass ({
 
   },
 
+  componentWillUnmount: function() {
+    ReservationStore.removeIndexChangeListener(this._onChange);
+  },
+  
   _onChange: function() {
     this.setState({reservations: ReservationStore.ownedReservations(CURRENT_USER_ID)});
   },

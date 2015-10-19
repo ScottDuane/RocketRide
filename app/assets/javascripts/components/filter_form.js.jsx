@@ -1,4 +1,7 @@
 var FilterForm = React.createClass ({
+  getInitialState: function() {
+    return {name}
+  },
   handleFilter: function(e) {
     e.preventDefault();
 

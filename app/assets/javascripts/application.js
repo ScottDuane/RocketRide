@@ -17,7 +17,10 @@
 //= require eventemitter
 //= require react
 //= require react_ujs
+//= require react-modal.min
+//= require react-modal 
 //= require bootstrap
-//= require reactrouter.min.js
+//= require reactrouter.min
 //= require react-lightbox
+//= require khan-modal
 //= require_tree .

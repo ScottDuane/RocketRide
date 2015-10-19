@@ -29,6 +29,8 @@ var IncomingIndexItem = React.createClass ({
     } else if(this.state.status === 'approved') {
       endText = <div><button onClick={this.handleCancellation}>Cancel Reservation</button></div>;
       verb = "reserved";
+    } else {
+      return;
     }
 
     return <div>

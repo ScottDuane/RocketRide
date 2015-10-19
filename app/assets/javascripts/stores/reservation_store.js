@@ -32,6 +32,17 @@
       return owned;
     },
 
+    createdReservations: function(id) {
+      var created = [];
+      ReservationStore.all().forEach(function(reservation) {
+        if(reservation.creator_id === id) {
+          created.push(reservation);
+        }
+      });
+
+      return created;
+    },
+
     updateReservation: function(updatedRes) {
       var updated = [];
       _reservations.forEach(function(reservation) {
@@ -59,7 +70,7 @@
     addReservation: function(reservation) {
       _reservations.push(reservation);
     },
-    
+
     dispatcherId: AppDispatcher.register(function(payload) {
       switch(payload.actionType) {
         case ReservationConstants.RESERVATION_RECEIVED:

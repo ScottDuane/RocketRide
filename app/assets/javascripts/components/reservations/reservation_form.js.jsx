@@ -13,7 +13,7 @@ var ReservationForm = React.createClass ({
   handleSubmit: function(e) {
     e.preventDefault();
     ApiUtil.createReservation(this.state);
-    // Lightbox.closeLightbox();
+    this.props.closeLightbox();
   },
 
   render: function() {

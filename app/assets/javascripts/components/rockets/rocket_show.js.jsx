@@ -52,7 +52,7 @@ window.RocketShow = React.createClass ({
         <br />
 
       </ul>
-      <ButtonWithDialog />
+
 
       <Lightbox>
         <LightboxTrigger>

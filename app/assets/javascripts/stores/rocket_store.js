@@ -25,6 +25,17 @@
       _rockets.push(rocket);
     },
 
+    findById: function(id) {
+      var myRocket = null;
+      RocketStore.all().forEach(function(rocket){
+        if(rocket.id === id) {
+          myRocket = rocket;
+        }
+      });
+
+      return myRocket;
+    },
+
     dispatcherID: AppDispatcher.register(function(payload) {
       // debugger;
       switch(payload.actionType) {

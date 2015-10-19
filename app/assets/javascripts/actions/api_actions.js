@@ -21,6 +21,13 @@ window.ApiActions = {
     });
   },
 
+  receiveAllReservations: function(reservations) {
+    AppDispatcher.dispatch({
+      actionType: ReservationConstants.RESERVATIONS_RECEIVED,
+      reservations: reservations
+    });
+  },
+
   receiveReservation: function(reservation) {
     AppDispatcher.dispatch({
       actionType: ReservationConstants.RESERVATION_RECEIVED,
@@ -31,6 +38,13 @@ window.ApiActions = {
   updateReservation: function(reservation) {
     AppDispatcher.dispatch({
       actionType: ReservationConstants.RESERVATION_UPDATED,
+      reservation: reservation
+    });
+  },
+
+  deleteReservation: function(reservation) {
+    AppDispatcher.dispatch({
+      actionType: ReservationConstants.RESERVATION_DELETED,
       reservation: reservation
     });
   }

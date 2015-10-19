@@ -2,6 +2,7 @@
 
 window.Navbar = React.createClass({
   getInitialState: function() {
+
     ApiUtil.fetchAllUsers();
     ApiUtil.fetchAllRockets();
     this.current_user = UserStore.findById(window.CURRENT_USER_ID);

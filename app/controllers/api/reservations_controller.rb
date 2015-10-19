@@ -13,6 +13,16 @@ class Api::ReservationsController < ApplicationController
     end
   end
 
+  def update
+    @reservation = Reservation.find(params[:id])
+
+    if @reservation.update(reservation_params)
+      render json: @reservation
+    else
+      render @reservation.errors.full_messages, status: 422
+    end
+  end  
+
   def reservation_params
     params.permit(:rocket_id, :start_date, :end_date, :status)
   end

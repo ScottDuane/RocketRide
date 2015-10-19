@@ -45,6 +45,15 @@ window.ApiUtil = {
     });
   },
 
+  fetchAllReservations: function() {
+    $.ajax ({
+      url: 'api/reservations',
+      success: function(reservations) {
+        ApiActions.receiveAllReservations(reservations);
+      }
+    });
+  },
+
   createReservation: function(resData) {
     $.ajax ({
       url: 'api/reservations',
@@ -59,10 +68,33 @@ window.ApiUtil = {
     });
   },
 
+  cancelReservation: function(reservation) {
+    $.ajax ({
+      url: 'api/reservations/'+reservation.id,
+      method: 'delete',
+      success: function(reservation) {
+        ApiActions.deleteReservation(reservation);
+
+      }
+    });
+  },
+
+  denyReservation: function(reservation) {
+    $.ajax ({
+      url: 'api/reservations/' + reservation.id,
+      method: 'patch',
+      data: JSON.stringify({status: 'denied'}),
+      succesion: function(reservation) {
+        ApiActions.updateReservation(reservation);
+      }
+    });
+  },
+
   approveReservation: function(reservation) {
     $.ajax ({
       url: 'api/reservations/' + reservation.id,
       method: 'patch',
+      data: JSON.stringify({status: 'approved'}),
       success: function(reservation) {
         ApiActions.updateReservation(reservation);
       }

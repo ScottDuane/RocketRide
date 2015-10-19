@@ -1,0 +1,5 @@
+window.FilterConstants = {
+  UPDATE_START: "UPDATE_START",
+  UPDATE_END: "UPDATE_END",
+  UPDATE_TYPES: "UPDATE_TYPES"
+};

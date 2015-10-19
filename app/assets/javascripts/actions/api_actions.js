@@ -48,5 +48,12 @@ window.ApiActions = {
       actionType: ReservationConstants.RESERVATION_DELETED,
       reservation: reservation
     });
+  },
+
+  receiveFilteredRockets: function(rockets) {
+    AppDispatcher.dispatch({
+      actionType: RocketConstants.FILTERED_ROCKETS_RECEIVED,
+      rockets: rockets
+    });
   }
 };

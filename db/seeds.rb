@@ -10,11 +10,11 @@ rocket1 = Rocket.create({rocket_name: "USS Enterprise", rocket_type: "Galaxy cla
 puts rocket1
 Rocket.create({rocket_name: "Serenity", rocket_type: "Firefly", captain_id: 2,
   avail_start: Date.new(2015, 3, 5), avail_end: Date.new(2020, 7, 15), image_url: 'assets/serenity.jpg'})
-Rocket.create({rocket_name: "Death Star", rocket_type: "Star", captain_id: 3,
+Rocket.create({rocket_name: "Death Star", rocket_type: "Star", captain_id: 2,
     avail_start: Date.new(2020, 1, 5), avail_end: Date.new(2040, 7, 15), image_url: 'assets/DeathStar.jpg'})
 
-Rocket.create({rocket_name: "Shuttlecraft Curie", rocket_type: "Shuttlecraft", captain_id: 4,
+Rocket.create({rocket_name: "Shuttlecraft Curie", rocket_type: "Shuttlecraft", captain_id: 1,
     avail_start: Date.new(2030, 12, 5), avail_end: Date.new(2040, 7, 15), image_url: 'assets/shuttlecraft_curie.jpg'})
 
-Rocket.create({rocket_name: "Millenium Falcon", rocket_type: "Light Freightor", captain_id: 5,
+Rocket.create({rocket_name: "Millenium Falcon", rocket_type: "Light Freightor", captain_id: 1,
     avail_start: Date.new(2030, 12, 5), avail_end: Date.new(2040, 7, 15), image_url: 'assets/milleniumfalcon.png'})

@@ -12,13 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require flux
 //= require eventemitter
 //= require react
 //= require react_ujs
 //= require react-modal.min
-//= require react-modal 
+//= require react-modal
 //= require bootstrap
 //= require reactrouter.min
 //= require react-lightbox

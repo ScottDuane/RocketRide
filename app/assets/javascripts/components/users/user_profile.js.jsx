@@ -6,15 +6,18 @@ var UserProfile = React.createClass({
       <p>Hey there, {currentUser}</p>
 
       <div className="row">
-        <div className="col-md-6">
-          <h2>Reservations on your rockets</h2>
-          <IncomingReservationIndex />
-        </div>
 
-        <div className="col-md-6">
-          <h2>Reservations you made</h2>
+        <div className="col-md-2"></div>
+        <div className="col-md-4">
+          <h2>Reservations</h2>
           <OutgoingReservationIndex />
         </div>
+        <div className="col-md-4">
+          <h2>Rockets</h2>
+          <MyRocketList />
+        </div>
+
+        <div className="col-md-2"></div>
       </div>
 
     </div>);

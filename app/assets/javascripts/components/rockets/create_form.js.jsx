@@ -16,7 +16,6 @@ window.RocketForm = React.createClass ({
   //   })
   // }
   createRocket: function () {
-    debugger;
     ApiUtil.createRocket(this.state);
     this.props.history.pushState(null, '/');
   },
@@ -45,9 +44,10 @@ window.RocketForm = React.createClass ({
 
   handlePhotoUpload: function(e) {
     e.preventDefault();
+    debugger;
     cloudinary.openUploadWidget({upload_preset: "zvecaalc"}, function(error, photo) {
-      this.setState({image_url: photo.url});
-    });
+      this.setState({image_url: photo[0].url});
+    }.bind(this));
   },
 
   render: function() {

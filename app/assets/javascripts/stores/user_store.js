@@ -12,7 +12,7 @@
     },
 
     findById: function(id) {
-      var this_user = null;
+      var this_user;
       _users.forEach(function(user) {
         if (user.id === id) {
           this_user = user;

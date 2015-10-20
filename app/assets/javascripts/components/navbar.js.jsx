@@ -15,9 +15,8 @@ window.Navbar = React.createClass({
 
   render: function () {
     var userURL = "#/users/"+window.CURRENT_USER_ID;
-
     return (
-      <nav className="navbar navbar-default">
+      <nav className="myNavbar" className="navbar navbar-default">
       <div className="container-fluid">
 
         <div className="navbar-header">
@@ -60,6 +59,7 @@ window.Navbar = React.createClass({
                 <button className="navbar-links no-border">Your Profile</button>
               </a>
             </li>
+
 
           </ul>
         </div>

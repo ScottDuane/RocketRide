@@ -19,4 +19,10 @@ Day 3 notes:
 - Next step is to start reservation components.  List of current user's reservations (ReservationIndex),
 ReservationForm on each rocket's show page.
 - Still no styling on Navbar.  Address this tomorrow and ask about adding filters.  Maybe a filter component?  
+
+Day 5 notes:
+
+- BUG: checkboxes on filter form not working
+- FEATURE: update rocket form not implemented
+- BUG: captain's name not appearing
 - 

@@ -8,6 +8,19 @@
       return _reservations.slice(0);
     },
 
+    findByRocketId: function(id) {
+
+      var res = [];
+      ReservationStore.all().forEach(function(reservation) {
+        debugger;
+        if(reservation.rocket_id === id) {
+          res.push(reservation);
+        }
+      });
+
+      return res;
+    },
+
     resetReservations: function(reservations) {
       _reservations = reservations;
     },
@@ -20,11 +33,11 @@
       ReservationStore.removeListener(RESERVATION_INDEX_CHANGE, callback);
     },
 
-    ownedReservations: function(id) {
+    ownedReservations: function(user_id, rocket_id) {
       var owned = [];
       ReservationStore.all().forEach(function(reservation) {
         var rocket = RocketStore.findById(reservation.rocket_id);
-        if(rocket.captain_id === id) {
+        if(rocket.captain_id === id && rocket.id === rocket_id) {
           owned.push(reservation);
         }
       });

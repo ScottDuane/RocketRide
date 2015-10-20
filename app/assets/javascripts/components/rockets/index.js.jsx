@@ -15,6 +15,10 @@ window.RocketIndex = React.createClass ({
     ApiUtil.fetchAllUsers();
   },
 
+  componentWillUnmount: function() {
+    RocketStore.removeIndexChangeListener(this._onChange);
+
+  },
   _onChange: function() {
     if(RocketStore.filteredRockets().length > 0) {
       this.setState({rockets: RocketStore.filteredRockets()});
@@ -36,10 +40,10 @@ window.RocketIndex = React.createClass ({
 
       <div class="row">
         {this.state.rockets.map(function(rocket){
-          return (<RocketIndexItem rocket={rocket} />);
+          return (<RocketIndexItem rocket={rocket} key={rocket.id}/>);
         })}
       </div>
-      
+
   </div>);
   }
 });

@@ -101,7 +101,7 @@
     },
 
     findById: function(id) {
-      var myRocket = null;
+      var myRocket;
       RocketStore.all().forEach(function(rocket){
         if(rocket.id === id) {
           myRocket = rocket;
@@ -109,6 +109,17 @@
       });
 
       return myRocket;
+    },
+
+    ownedRockets: function(user_id) {
+      var owned = [];
+      RocketStore.all().forEach(function(rocket) {
+        if(rocket.captain_id === user_id) {
+          owned.push(rocket);
+        }
+      });
+
+      return owned;
     },
 
     dispatcherID: AppDispatcher.register(function(payload) {

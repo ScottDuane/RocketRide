@@ -14,14 +14,15 @@ var OutgoingReservationIndex = React.createClass ({
   },
 
   _onChange: function() {
+    debugger;
     this.setState({reservations: ReservationStore.createdReservations(CURRENT_USER_ID)});
   },
-  
+
   render: function() {
     return (
     <div>
       {this.state.reservations.map(function(reservation){
-        return (<OutgoingIndexItem reservation={reservation} />);
+        return (<OutgoingIndexItem reservation={reservation} key={reservation.id}/>);
       })}
     </div>)
   }

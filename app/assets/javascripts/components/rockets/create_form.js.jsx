@@ -5,6 +5,7 @@ window.RocketForm = React.createClass ({
   mixins: [React.addons.LinkedStateMixin],
 
   getInitialState: function() {
+      this.photo_src = null;
       return {captain_id: window.CURRENT_USER_ID}
   },
 
@@ -46,12 +47,20 @@ window.RocketForm = React.createClass ({
     e.preventDefault();
     debugger;
     cloudinary.openUploadWidget({upload_preset: "zvecaalc"}, function(error, photo) {
+      this.photo_src = photo[0].url;
       this.setState({image_url: photo[0].url});
     }.bind(this));
   },
 
   render: function() {
     var Link = ReactRouter.Link;
+    var img_tag = "";
+    var photo_verb = "Upload";
+    if(this.photo_src) {
+      photo_verb = "Change";
+      img_tag = <img src={this.photo_src} className="create-form-pic" />;
+    }
+
     return(<div>
       <Navbar />
 
@@ -84,10 +93,14 @@ window.RocketForm = React.createClass ({
                 <label for="rocket-end">until</label>
                 <input type="date" className="form-control" id="rocket-end" onChange={this.handleEndDateChange}/>
             </div>
+            <div className="col-md-4">
+              <button onClick={this.handlePhotoUpload}>{photo_verb} Photo</button>
+              {img_tag}
+            </div>
           </div>
+
           <div className="row">
             <button type="submit" className="btn btn-primary">List your rocket!</button>
-              <button onClick={this.handlePhotoUpload}>Upload Photo</button>
           </div>
         </form>
       </div>

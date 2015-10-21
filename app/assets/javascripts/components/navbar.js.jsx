@@ -33,7 +33,7 @@ window.Navbar = React.createClass({
         <div className="collapse navbar-collapse" id="collapse-menu">
           <ul className="nav navbar-nav pull-left">
             <a className="navbar-brand" href="#/">
-              <button className="logo no-border"><img className="brand" src="assets/spaceship_default.jpeg" height="40px"/></button>
+              <button className="logo no-border">Placeholder</button>
             </a>
           </ul>
           <ul className="nav navbar-nav pull-right">

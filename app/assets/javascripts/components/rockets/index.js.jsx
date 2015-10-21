@@ -31,14 +31,14 @@ window.RocketIndex = React.createClass ({
     // debugger;
     var Link = ReactRouter.Link;
     var userURL = 'users/'+CURRENT_USER_ID;
-    return (<div className="rocket-index">
+    return (<div className="rocket-index-master">
       <Navbar />
 
-      <div class="row">
+      <div className="row" className="filter-form">
         <FilterForm />
       </div>
 
-      <div class="row">
+      <div className="row" className="rocket-index">
         {this.state.rockets.map(function(rocket){
           return (<RocketIndexItem rocket={rocket} key={rocket.id}/>);
         })}

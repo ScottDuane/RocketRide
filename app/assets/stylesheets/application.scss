@@ -60,6 +60,8 @@ body {
     background: url("background_space.jpg") center center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
 }
 .panel-heading {
   font-family: 'Noto Sans', sans-serif;
@@ -69,48 +71,57 @@ body {
 
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
     background: transparent;
-    width: 100px;
+    width: 125px;
+    height: 30px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
     border-radius: 5px;
 }
-.rocket-item {
-  position: relative;
-  float: left;
-  padding: 10px;
-  height: 500px;
-  width: 500px;
-  margin: 5px;
 
-  color: #444;
-  font-family: 'Quattrocento Sans', sans-serif;
+
+.type-select {
+  position: absolute;
+  float: right;
 }
 
-.rocket-index {
-  position: absolute;
-  height: 100%;
-  width: 100%;
+// .rocket-index {
+//   position: relative;
+// }
+
+// Example gallery css
+.rocket-item {
+
+    margin: 5px;
+    padding: 5px;
+
+    height: 450px;
+    width: 450px;
+    float: left;
+    text-align: center;
 }
 
 .rocket-photo {
-  border-radius: 5%;
-  width: 100%;
-  height: 75%;
-  padding-bottom: 4px;
+    display: inline;
+    margin: 5px;
+    height: 300px;
+    width: 400px;
+    float: top;
+    border-radius: 5px;
 }
-
-.rocket-name {
-  padding-top: 4px;
-  padding-left: 4px;
-  padding-bottom: 0px;
-  font-size: 18px;
-  font-weight: 1000;
-}
+//
+// div.img a:hover img {
+//     border:1px solid #0000ff;
+// }
 
 .rocket-info {
-  padding-top: 0px;
-  padding-left: 7px;
-  font-size: 16px;
+    text-align: center;
+    font-weight: normal;
+    width: auto;
+    margin: 5px;
 }
-
+// end
 .rocket-profile-pic {
   height: 700px;
   width: 100%;
@@ -125,8 +136,68 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 .filter-form {
-  height: 300px;
-  background-color: #fff;
+  position: relative;
+  width: 100%;
+  // height: 175px;
+  margin: 0px;
+  padding: 0px;
+  background-color: #eee;
+  font-family: "Noto Sans", sans-serif;
+  color: #555;
+  // font-size: 24px;
+}
+
+.filter-label {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 24px;
+  text-align: center;
+  position: relative;
+  display: block;
+}
+
+.date-row {
+  margin-top: 10px;
+  padding-top: 10px;
+  // border-bottom: #999 solid 1px;
+  // border: #999 solid 1px;
+  color: #555;
+  position: relative;
+}
+
+.date-label {
+  padding-top: 2px;
+}
+
+.date-input {
+  border-radius: 5px;
+  border-color: none;
+  length: 100%;
+  position: absolute;
+  float: left;
+}
+.filter-types {
+
+  position: relative;
+
+  // border-bottom: #999 solid 1px;
+  // margin-top: 50px;
+  padding-top: 20px;
+}
+
+.type-select {
+  position: absolute;
+  display: block;
+  padding-top: 2px;
+}
+
+.type-label {
+  position: absolute;
+  display: block;
+  padding-left: 15px;
+}
+.navbar {
+  margin: 0px;
+  padding:0px;
 }
 .group:after {
   content: "";

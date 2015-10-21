@@ -53,7 +53,7 @@ ul, li {
   background-color: transparentize(darkblue, 0.8);
 }
 
-#login-username, #login-password {
+#login-username, #login-password, #signup-username, #signup-password {
   color: #ccc;
 }
 
@@ -86,6 +86,12 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     border-radius: 5px;
 }
 
+button:hover {
+  background-color: darkgrey;
+  color: white;
+  border: white 1px solid;
+}
+
 
 .type-select {
   position: absolute;
@@ -107,36 +113,76 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     float: left;
     text-align: center;
 }
-
+.index-item-container {
+  position: relative;
+}
 .rocket-photo {
+    position: absolute;
     display: inline;
     margin: 5px;
     height: 300px;
     width: 400px;
     float: top;
     border-radius: 5px;
+
 }
-//
+
+.index-item-container:hover {
+  .rocket-info {
+    display: block;
+  }
+
+  .rocket-photo {
+    height: 310px;
+    width: 415px;
+    opacity: 0.7;
+  }
+}
 // div.img a:hover img {
 //     border:1px solid #0000ff;
 // }
 
 .rocket-info {
-    text-align: center;
+    position: absolute;
+    display: none;
+    // top: 0;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
+    // text-align: center;
     font-weight: normal;
-    width: auto;
-    margin: 5px;
+    color: lightgrey;
+    font-size: 24px;
+    z-index: 1;
 }
-// end
+
 .rocket-profile-pic {
-  height: 700px;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.7;
+  width: 100%;
+}
+.rocket-profile-container {
+  height: 500px;
   width: 100%;
   padding-top: 0px;
   margin-top: 0px;
-
+  overflow: hidden;
+  position: relative;
 }
 
+.rocket-title {
+  position: absolute;
+  color: white;
+  font-size: 96px;
+  text-align: center;
+  padding: 200px;
+}
+
+
+
 .rocket-index-pic {
+  position: absolute;
   height: 100px;
   width: 150px;
 }

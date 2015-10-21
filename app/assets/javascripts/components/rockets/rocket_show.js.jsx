@@ -37,31 +37,35 @@ window.RocketShow = React.createClass ({
     var imgURL = this.rocket.image_url || 'assets/spaceship_default.jpeg';
 
     var Link = ReactRouter.Link;
-    return (<div>
-      <Navbar />
+    return (
+      <div>
+        <Navbar />
 
-      <img src={imgURL} className="rocket-profile-pic" />
-      <ul>
-        <li>
-          Fly with {this.captain} on the {this.rocket.rocket_name}!
-        </li>
-        <br />
-        <li>
-          Available from {this.rocket.avail_start} to {this.rocket.avail_end}.
-        </li>
-        <br />
+        <div className="rocket-profile-container">
+          <img src={imgURL} className="rocket-profile-pic" />
+          <p className="rocket-title">{this.rocket.rocket_name}</p>
+        </div>
+        <ul>
+          <li>
+            Fly with {this.captain} on the {this.rocket.rocket_name}!
+          </li>
+          <br />
+          <li>
+            Available from {this.rocket.avail_start} to {this.rocket.avail_end}.
+          </li>
+          <br />
 
-      </ul>
+        </ul>
 
 
-      <Lightbox>
-        <LightboxTrigger>
-            <button>Reserve Rocket</button>
-        </LightboxTrigger>
-        <LightboxModal>
-            <ReservationForm rocket={this.rocket} />
-        </LightboxModal>
-    </Lightbox>
+        <Lightbox>
+          <LightboxTrigger>
+              <button>Reserve Rocket</button>
+          </LightboxTrigger>
+          <LightboxModal>
+              <ReservationForm rocket={this.rocket} />
+          </LightboxModal>
+      </Lightbox>
     </div>);
   }
 });

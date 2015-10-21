@@ -9,10 +9,9 @@
     },
 
     findByRocketId: function(id) {
-
+      // debugger;
       var res = [];
       ReservationStore.all().forEach(function(reservation) {
-        debugger;
         if(reservation.rocket_id === id) {
           res.push(reservation);
         }
@@ -37,7 +36,7 @@
       var owned = [];
       ReservationStore.all().forEach(function(reservation) {
         var rocket = RocketStore.findById(reservation.rocket_id);
-        if(rocket.captain_id === id && rocket.id === rocket_id) {
+        if(rocket.captain_id === user_id && rocket.id === rocket_id) {
           owned.push(reservation);
         }
       });

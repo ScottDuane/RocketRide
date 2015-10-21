@@ -5,6 +5,7 @@ window.Navbar = React.createClass({
 
     ApiUtil.fetchAllUsers();
     ApiUtil.fetchAllRockets();
+    ApiUtil.fetchAllReservations();
     this.current_user = UserStore.findById(window.CURRENT_USER_ID);
     return {};
   },

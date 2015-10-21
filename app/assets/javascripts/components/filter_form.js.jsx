@@ -10,7 +10,6 @@ var FilterForm = React.createClass ({
 
 
   handleCheckChange: function(e) {
-    e.preventDefault();
     if(e.target.selected){
         this.types.push(e.target.value);
     } else {
@@ -46,7 +45,7 @@ var FilterForm = React.createClass ({
         <div className="row" className="date-row">
           <div className="col-md-2" />
           <div className="col-md-1">
-            <label className="date-label" for="start-date">From</label>
+            <label className="date-label" for="start-date">Start Date</label>
           </div>
 
           <div className="col-md-3">
@@ -54,7 +53,7 @@ var FilterForm = React.createClass ({
           </div>
 
           <div className="col-md-1">
-            <label className="date-label" for="start-date">until</label>
+            <label className="date-label" for="start-date">End Date</label>
           </div>
 
           <div className="col-md-3">
@@ -68,26 +67,26 @@ var FilterForm = React.createClass ({
         <div className="row" className="filter-types">
             <div className="col-md-2" />
             <div className="col-md-1">
-              <h5>Types</h5>
+              <h5>Rocket Types</h5>
             </div>
             <div className="col-md-2">
               <label for="galaxy" className="type-label">Galaxy class</label>
-              <input id="galaxy" className="type-select" type="checkbox" value='Galaxy class' onChange={this.handleCheckChange} />
+              <input id="galaxy" className="type-select" type="checkbox" value='Galaxy class' onClick={this.handleCheckChange} />
             </div>
 
             <div className="col-md-2">
               <label for="constitution" className="type-label">Constitution class</label>
-              <input id="constitution" className="type-select" type="checkbox" value='Constitution class' onChange={this.handleCheckChange} />
+              <input id="constitution" className="type-select" type="checkbox" value='Constitution class' onClick={this.handleCheckChange} />
             </div>
 
             <div className="col-md-2">
               <label for="shuttlecraft" className="type-label">Shuttlecraft</label>
-              <input id="shuttlecraft" className="type-select" type="checkbox" value='Shuttlecraft' onChange={this.handleCheckChange} />
+              <input id="shuttlecraft" className="type-select" type="checkbox" value='Shuttlecraft' onClick={this.handleCheckChange} />
             </div>
 
             <div className="col-md-2">
               <label for="freightor" className="type-label">Freightor</label>
-              <input id="freightor" className="type-select" type="checkbox" value='Freightor' onChange={this.handleCheckChange} />
+              <input id="freightor" className="type-select" type="checkbox" value='Freightor' onClick={this.handleCheckChange} />
             </div>
 
         </div>

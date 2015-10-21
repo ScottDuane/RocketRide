@@ -1,7 +1,6 @@
 
 var OutgoingIndexItem = React.createClass ({
   getInitialState: function() {
-    debugger;
     this.rocket = RocketStore.findById(this.props.reservation.rocket_id);
     this.captain = UserStore.findById(this.rocket.captain_id);
     return {status: this.props.reservation.status };

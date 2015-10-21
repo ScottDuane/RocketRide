@@ -15,6 +15,7 @@ h1, h2, p, strong, em, a {
   background: transparent;
   height: 100%;
   width: 100%;
+  font-family: "Inconsolata";
 }
 
 ul, li {
@@ -111,7 +112,7 @@ button:hover {
     height: 450px;
     width: 450px;
     float: left;
-    text-align: center;
+
 }
 .index-item-container {
   position: relative;
@@ -124,20 +125,22 @@ button:hover {
     width: 400px;
     float: top;
     border-radius: 5px;
-
+    float: left;
 }
 
 .index-item-container:hover {
   .rocket-info {
-    display: block;
+    display: inline;
   }
 
   .rocket-photo {
     height: 310px;
     width: 415px;
-    opacity: 0.7;
+    opacity: 0.4;
+
   }
 }
+
 // div.img a:hover img {
 //     border:1px solid #0000ff;
 // }
@@ -145,15 +148,15 @@ button:hover {
 .rocket-info {
     position: absolute;
     display: none;
-    // top: 0;
-    // bottom: 0;
-    // left: 0;
-    // right: 0;
-    // text-align: center;
+    padding: 50px;
+    padding-top: 100px;
+    text-align:center;
     font-weight: normal;
-    color: lightgrey;
+    color: #333;
     font-size: 24px;
+    font-family: "Inconsolata";
     z-index: 1;
+
 }
 
 .rocket-profile-pic {
@@ -179,10 +182,19 @@ button:hover {
   padding: 200px;
 }
 
+.profile-item {
+  position: relative;
+  display: block;
+}
 
-
-.rocket-index-pic {
+.profile-text {
   position: absolute;
+  display: inline;
+}
+.rocket-index-pic {
+  position: relative;
+  display: block;
+  border-radius: 5px;
   height: 100px;
   width: 150px;
 }
@@ -194,14 +206,15 @@ button:hover {
   margin: 0px;
   padding: 0px;
   background-color: #eee;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Inconsolata";
+  font-size: 15px;
   color: #555;
   // font-size: 24px;
 }
 
 .filter-label {
-  font-family: "Noto Sans", sans-serif;
-  font-size: 24px;
+  // font-family: "Noto Sans", sans-serif;
+  // font-size: 24px;
   text-align: center;
   position: relative;
   display: block;

@@ -56,13 +56,19 @@ ul, li {
 #login-username, #login-password {
   color: #ccc;
 }
-body {
+
+.cover-page {
     background: image-url("background_space.jpg") center center;
-    background-size: 100% 100%;
+    z-index: -1;
+    background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
-    z-index: -1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
+
 .panel-heading {
   font-family: 'Noto Sans', sans-serif;
   color: transparentize(#ccc, 0.2);

@@ -14,7 +14,6 @@ var OutgoingReservationIndex = React.createClass ({
   },
 
   _onChange: function() {
-    debugger;
     this.setState({reservations: ReservationStore.createdReservations(CURRENT_USER_ID)});
   },
 

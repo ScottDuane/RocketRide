@@ -1,4 +1,4 @@
-$(function() {
+RocketRideApp = function() {
   var Router = ReactRouter.Router;
   var Route = ReactRouter.Route;
   var IndexRoute = ReactRouter.IndexRoute;
@@ -12,4 +12,4 @@ $(function() {
     <Route path='rockets/:id' component={RocketShow} />
     <Route path='users/:id' component={UserProfile} />
   </Router>, document.getElementById('content'));
-});
+};

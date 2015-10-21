@@ -65,7 +65,7 @@ var LightboxModal = React.createClass({
                 <div>
                     <div style={this.blackOverlayStyles} onClick={this.props.closeLightbox} />
                     <div style={this.whiteContentStyles}>
-                        
+
                         {this.props.children}
                     </div>
             </div>

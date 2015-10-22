@@ -26,9 +26,7 @@ var RocketProfileItem = React.createClass({
     //  debugger;
     return(
       <div className="profile-item">
-        <div className="col-md-4" >
-          <img src={this.props.rocket.image_url} className="rocket-index-pic" />
-        </div>
+        <img src={this.props.rocket.image_url} className="rocket-index-pic" />
 
         <div className="profile-text">
           {message}

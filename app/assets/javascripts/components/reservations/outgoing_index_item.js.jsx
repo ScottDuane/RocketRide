@@ -13,27 +13,34 @@ var OutgoingIndexItem = React.createClass ({
 
 
   render: function() {
+    var Link = ReactRouter.Link;
     var verb = "";
+    var rocket_url = "#/rockets/" + this.rocket.id;
     if(this.props.reservation.status === 'pending') {
       verb = 'requested';
     } else {
       verb = 'reserved';
     }
-
+    var status_class="";
     var button = "";
     if(this.state.status === 'approved' || this.state.status === 'pending') {
       button = <button className="res-button" onClick={this.handleCancellation}>Cancel Reservation</button>;
     }
 
+    if(this.state.status === 'approved') {
+      status_class = "approved-res";
+    } else if (this.state.status === 'pending') {
+      status_class = "pending-res";
+    } else {
+      status_class = "deny-cancel-res";
+    }
     return (
       <div className="out-res-item">
-        <ul>
-          <li><strong>Rocket Name:</strong> {this.rocket.rocket_name} </li>
-          <li><strong>Captain: </strong>{this.captain.username} </li>
-          <li><strong>Start Date: </strong>{this.props.reservation.start_date} </li>
-          <li><strong>End Date: </strong>{this.props.reservation.end_date}</li>
-          <li><strong>Status: </strong>{this.state.status}</li>
-        </ul>
+        <div className="res-rocket"><Link to={rocket_url}>{this.rocket.rocket_name}</Link></div>
+        <div className="res-desc">from {this.props.reservation.start_date} until {this.props.reservation.end_date}</div>
+        <div className={status_class}>{this.state.status.toUpperCase()}</div>
+        <img src={this.rocket.image_url} className="thumbnail-rocket" />
+
         {button}
       </div>
     )

@@ -476,17 +476,102 @@ button:hover {
   padding: 4px;
 }
 
-.out-res-index {
-  color: #444;
+.res-index-container {
+  color: #ddd;
+  position: absolute;
+  font-size: 24px;
+  width: 40%;
+  margin-left: 10%;
 }
 
+.rocket-index-container{
+  position: absolute;
+  color: #ddd;
+  width: 40%;
+  margin-left: 50%;
+}
 .res-button {
   color: #444;
   background-color: #9999ff;
+  position: absolute;
+  margin-left: 25px;
+  margin-top: 44px;
   length: 100px;
-  height: 50px;
+  height: 40px;
   border: none;
-  border-radius: 20px;
+  font-size: 16px;
+  border-radius: 15px;
+  :hover {
+    background-color: #444;
+    color: #9999ff;
+    border: #9999ff solid 1px;
+  }
+}
+
+.out-res-index {
+  position: relative;
+}
+
+.out-res-item {
+  position: relative;
+  width: 300px;
+  height: 175px;
+  margin-top: 30px;
+  margin-left: 100px;
+}
+
+.res-header {
+  font-size: 36px;
+  text-align: center;
+}
+
+.out-res-index ul {
+  display: block;
+}
+//
+// .out-res-index ul li {
+//   display: block;
+// }
+.greeting {
+  color: #ddd;
+  font-size: 37px;
+  position: relative;
+  padding-bottom: 20px;
+  text-align: center;
+
+}
+
+.rocket-index-container {
+  color: #ddd;
+  font-size: 24px;
+}
+
+.thumbnail-rocket {
+  width: 190px;
+  height: 110px;
+  border-radius: 10px;
+  position: absolute;
+  margin-left: 167px;
+  margin-top: -26px;
+}
+
+.pending-res {
+  color: #fe9b00;
+  margin-left: 25px;
+}
+
+.res-rocket {
+  position: relative;
+  font-size: 24px;
+  margin-left: 25px;
+}
+
+.res-desc {
+  font-size: 16px;
+  margin-top: 28px;
+  position: absolute;
+  margin-left: 25px;
+  width: 128px;
 }
 .group:after {
   content: "";

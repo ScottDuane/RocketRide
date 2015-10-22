@@ -12,7 +12,8 @@ h1, h2, p, strong, em, a {
   text-decoration: inherit;
   text-align: inherit;
   color: inherit;
-  background: transparent;
+  background: none;
+  background-color: none;
   height: 100%;
   width: 100%;
   font-family: "Inconsolata";
@@ -99,27 +100,35 @@ button:hover {
   float: right;
 }
 
-// .rocket-index {
-//   position: relative;
-// }
+#rocket-index {
+  position: relative;
+  background: #000 image-url("back-5.jpg") center center;
+}
+
+
 
 // Example gallery css
 .rocket-item {
 
-    margin: 5px;
-    padding: 5px;
-
-    height: 450px;
-    width: 450px;
+    margin: 10px;
+    padding: 10px;
+    height: 300px;
+    width: 400px;
     float: left;
+<<<<<<< 6fe8eff56705b88c668995fee2b74c9229797537
 
+=======
+    text-align: center;
+    background: transparent;
+>>>>>>> Improvements to navbar
 }
 .index-item-container {
   position: relative;
+
 }
 .rocket-photo {
     position: absolute;
-    display: inline;
+    display: block;
     margin: 5px;
     height: 300px;
     width: 400px;
@@ -130,14 +139,23 @@ button:hover {
 
 .index-item-container:hover {
   .rocket-info {
+<<<<<<< 6fe8eff56705b88c668995fee2b74c9229797537
     display: inline;
+=======
+    transition: 0.3s;
+    display: block;
+>>>>>>> Improvements to navbar
   }
 
   .rocket-photo {
+    transition: 0.5s;
     height: 310px;
     width: 415px;
     opacity: 0.4;
+<<<<<<< 6fe8eff56705b88c668995fee2b74c9229797537
 
+=======
+>>>>>>> Improvements to navbar
   }
 }
 
@@ -148,11 +166,26 @@ button:hover {
 .rocket-info {
     position: absolute;
     display: none;
+<<<<<<< 6fe8eff56705b88c668995fee2b74c9229797537
     padding: 50px;
     padding-top: 100px;
     text-align:center;
     font-weight: normal;
     color: #333;
+=======
+    text-align: center;
+    // top: 0;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
+    // text-align: center;
+
+    margin-top: 100px;
+    width: 375px;
+    margin-left: 25px;
+    font-weight: 500;
+    color: #444;
+>>>>>>> Improvements to navbar
     font-size: 24px;
     font-family: "Inconsolata";
     z-index: 1;
@@ -182,12 +215,39 @@ button:hover {
   padding: 200px;
 }
 
+<<<<<<< 6fe8eff56705b88c668995fee2b74c9229797537
 .profile-item {
   position: relative;
   display: block;
 }
 
 .profile-text {
+=======
+.rocket-title-prefix {
+  position: absolute;
+  color: white;
+  font-size: 54px;
+  text-align: center;
+  padding: 140px;
+}
+
+.request-button {
+  position: absolute;
+  width: 250px;
+  height: 60px;
+  color: white;
+  background-color: transparentize(grey, 0.4);
+  margin-top: 350px;
+  margin-left: 42%;
+  font-size: 24px;
+  align: center;
+}
+
+.request-button:hover {
+  background-color: red;
+}
+.rocket-index-pic {
+>>>>>>> Improvements to navbar
   position: absolute;
   display: inline;
 }
@@ -200,18 +260,29 @@ button:hover {
 }
 
 .filter-form {
+  box-shadow: 5px 5px 5px #888888;
   position: relative;
   width: 100%;
-  // height: 175px;
+  height: 175px;
   margin: 0px;
   padding: 0px;
   background-color: #eee;
   font-family: "Inconsolata";
+<<<<<<< 6fe8eff56705b88c668995fee2b74c9229797537
   font-size: 15px;
   color: #555;
   // font-size: 24px;
+=======
+  color: #ccc;
+  font-size: 15px;
+  background: #000 image-url("back-5.jpg") left center no-repeat;
+>>>>>>> Improvements to navbar
 }
 
+#content {
+  background: #000 image-url("back-5.jpg") left center no-repeat;
+  background-size: 100% 100%;
+}
 .filter-label {
   // font-family: "Noto Sans", sans-serif;
   // font-size: 24px;
@@ -220,22 +291,27 @@ button:hover {
   display: block;
 }
 
+.type-text {
+  font-size: 15px;
+}
 .date-row {
   margin-top: 10px;
   padding-top: 10px;
   // border-bottom: #999 solid 1px;
   // border: #999 solid 1px;
-  color: #555;
+  color: #ccc;
   position: relative;
 }
 
 .date-label {
-  padding-top: 2px;
+  padding-top: 4px;
+  overflow: hidden;
 }
 
 .date-input {
   border-radius: 5px;
   border-color: none;
+  margin: none;
   length: 100%;
   position: absolute;
   float: left;
@@ -261,8 +337,55 @@ button:hover {
   padding-left: 15px;
 }
 .navbar {
+  position: relative;
+  height: 200px;
+  border: none;
+  background: #000 image-url("navbar-image.jpg") left center no-repeat;
   margin: 0px;
   padding:0px;
+}
+
+#profile-link {
+  background-color: #9999ff;
+}
+
+#rockets-link {
+  background-color: #fe9b00;
+}
+
+#logout-link {
+  background-color: #cc6666;
+}
+
+#add-rocket-link {
+  background-color: #cc99cc;
+}
+.navbar li {
+  margin: 0px;
+  padding: 0px;
+}
+
+.navbar a {
+  padding-bottom: 5px;
+  padding-top: 20px;
+  margin-bottom: 0px;
+
+}
+.navbar-nav > li > a {
+  margin-top: 25px;
+}
+.navbar-links {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 20px;
+  width: 120px;
+  height: 50px;
+  color: black;
+}
+
+.navbar-links:hover {
+  border: none;
 }
 .group:after {
   content: "";

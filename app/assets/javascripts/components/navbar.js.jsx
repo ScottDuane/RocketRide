@@ -32,34 +32,29 @@ window.Navbar = React.createClass({
         </div>
 
         <div className="collapse navbar-collapse" id="collapse-menu">
-          <ul className="nav navbar-nav pull-left">
-            <a className="navbar-brand" href="#/">
-              <button className="logo no-border">Placeholder</button>
-            </a>
-          </ul>
           <ul className="nav navbar-nav pull-right">
             <li>
-              <a className="add-rocket-link" href="#/rockets/new">
-                <button className="navbar-links no-border">Make a Rocket</button>
+              <a href="#/">
+                <button id="rockets-link" className="navbar-links no-border">All Rockets</button>
               </a>
             </li>
             <li>
-              <a className="rockets-link" href="#/">
-                <button className="navbar-links no-border">All Rockets</button>
+              <a  href="#/rockets/new">
+                <button id="add-rocket-link" className="navbar-links no-border">List a Rocket</button>
+              </a>
+            </li>
+            <li>
+              <a  href={userURL}>
+                <button id="profile-link" className="navbar-links no-border">Your Profile</button>
               </a>
             </li>
 
             <li>
               <a href="#">
-                <button className="navbar-links no-border" onClick={this.logOutClickHandler}>Log Out</button>
+                <button id="logout-link" className="navbar-links no-border" onClick={this.logOutClickHandler}>Log Out</button>
               </a>
           </li>
 
-            <li>
-              <a className="profile-link" href={userURL}>
-                <button className="navbar-links no-border">Your Profile</button>
-              </a>
-            </li>
 
 
           </ul>

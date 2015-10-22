@@ -38,7 +38,7 @@ window.RocketIndex = React.createClass ({
         <FilterForm />
       </div>
 
-      <div className="row" className="rocket-index">
+      <div id="rocket-index" className="row" className="rocket-index">
         {this.state.rockets.map(function(rocket){
           return (<RocketIndexItem rocket={rocket} key={rocket.id}/>);
         })}

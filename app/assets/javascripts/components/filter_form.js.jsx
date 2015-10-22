@@ -43,12 +43,12 @@ var FilterForm = React.createClass ({
 
 
         <div className="row" className="date-row">
-          <div className="col-md-2" />
+          <div className="col-md-7" />
           <div className="col-md-1">
             <label className="date-label" for="start-date">Start Date</label>
           </div>
 
-          <div className="col-md-3">
+          <div className="col-md-2">
             <input className="date-input" type="date" placeholder="Start date" onChange={this.handleStartChange} />
           </div>
 
@@ -56,7 +56,7 @@ var FilterForm = React.createClass ({
             <label className="date-label" for="start-date">End Date</label>
           </div>
 
-          <div className="col-md-3">
+          <div className="col-md-1">
             <input className="date-input" type="date" onChange={this.handleEndChange} />
           </div>
         </div>
@@ -65,9 +65,13 @@ var FilterForm = React.createClass ({
           <div className="col-md-12" />
         </div>
         <div className="row" className="filter-types">
-            <div className="col-md-2" />
+            <div className="col-md-7" />
             <div className="col-md-1">
+<<<<<<< 6fe8eff56705b88c668995fee2b74c9229797537
               <h5>Rocket Types</h5>
+=======
+              <h5 className="type-text">Types</h5>
+>>>>>>> Improvements to navbar
             </div>
             <div className="col-md-2">
               <label for="galaxy" className="type-label">Galaxy class</label>

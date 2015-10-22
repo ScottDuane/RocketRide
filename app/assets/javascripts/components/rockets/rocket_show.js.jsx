@@ -43,29 +43,22 @@ window.RocketShow = React.createClass ({
 
         <div className="rocket-profile-container">
           <img src={imgURL} className="rocket-profile-pic" />
+          <p className="rocket-title-prefix">Fly with {this.captain} on the</p>
           <p className="rocket-title">{this.rocket.rocket_name}</p>
+            <Lightbox>
+              <LightboxTrigger>
+                  <button className="request-button">Request Reservation</button>
+              </LightboxTrigger>
+              <LightboxModal>
+                  <ReservationForm rocket={this.rocket} />
+              </LightboxModal>
+            </Lightbox>
+
         </div>
-        <ul>
-          <li>
-            Fly with {this.captain} on the {this.rocket.rocket_name}!
-          </li>
-          <br />
-          <li>
-            Available from {this.rocket.avail_start} to {this.rocket.avail_end}.
-          </li>
-          <br />
-
-        </ul>
 
 
-        <Lightbox>
-          <LightboxTrigger>
-              <button>Reserve Rocket</button>
-          </LightboxTrigger>
-          <LightboxModal>
-              <ReservationForm rocket={this.rocket} />
-          </LightboxModal>
-      </Lightbox>
+
+
     </div>);
   }
 });

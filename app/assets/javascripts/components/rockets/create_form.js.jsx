@@ -61,49 +61,84 @@ window.RocketForm = React.createClass ({
       img_tag = <img src={this.photo_src} className="create-form-pic" />;
     }
 
-    return(<div>
+    return(
+      <div>
       <Navbar />
-
+        <img src="assets/back-5.jpg" className="background-image">
         <div className="create-form">
-        <form className="form-inline" onSubmit={this.createRocket}>
-          <div class="row">
-            <div className="col-md-4">
-                <label for="rocket-name">Rocket Name</label>
-                <input type="text" className="form-control" id="rocket-name" placeholder="U.S.S. Enterprise" onChange={this.handleNameChange}/>
-            </div>
-            <div className="col-md-4">
-                <label for="rocket-type">Rocket Type</label>
-                <input type="text" className="form-control" id="rocket-type" placeholder="Galaxy class starship" onChange={this.handleTypeChange}/>
-            </div>
+            <form onSubmit={this.createRocket}>
+              <div className="create-row" className="create-form-header">
+                Share the love.  List your spacecraft.
+              </div>
 
-          </div>
-          <div className="row">
-            <div className="col-md-4">
-                <label for="rocket-desc">Description</label>
-                <input type="text" className="form-control" id="rocket-desc" placeholder="Some info on your rocket" onChange={this.handleDescriptionChange}/>
-            </div>
-          </div>
+              <div className="create-row" id="create-warning">
+                RocketRide is not responsible for damage to crafts (e.g., phaser burns on walls, stolen cargo, etc.) or personal injuries (e.g., Reever bites, mind control-related trauma, etc.).
+              </div>
+              <div className="create-row">
+                <div className="create-label-container">
+                  <label for="rocket-name" className="create-label">What's the name of your craft?</label>
+                </div>
+                <div className="create-input-container">
+                    <input type="text" id="rocket-name" className="create-input" onChange={this.handleNameChange}/>
+                </div>
+              </div>
 
-          <div className="row">
-            <div className="col-md-4">
-                <label for="rocket-start">Available from</label>
-                <input type="date" className="form-control" id="rocket-start" onChange={this.handleStartDateChange} />
-            </div>
-            <div className="col-md-4">
-                <label for="rocket-end">until</label>
-                <input type="date" className="form-control" id="rocket-end" onChange={this.handleEndDateChange}/>
-            </div>
-            <div className="col-md-4">
-              <button onClick={this.handlePhotoUpload}>{photo_verb} Photo</button>
-              {img_tag}
-            </div>
-          </div>
+              <div className="create-row">
+                <div className="create-label-container">
+                  <label for="rocket-type" className="create-label">What kind of craft do you fly?</label>
+                </div>
+                <div className="create-input-container">
+                  <input type="text" id="rocket-type" placeholder="Galaxy class starship" onChange={this.handleTypeChange}/>
+                </div>
+              </div>
 
-          <div className="row">
-            <button type="submit" className="btn btn-primary">List your rocket!</button>
-          </div>
-        </form>
-      </div>
+            <br></br>
+              <div className="create-row">
+                <div className="create-label-container">
+                    <label for="rocket-desc" className="create-label">Tell potential riders about your craft.  (E.g., where do you pick up passengers, what's the gravitational force on your ship, what are the sleeping arrangements, etc.)</label>
+                </div>
+
+                <div className="create-input-container">
+                  <textarea rows="6" cols="25" id="rocket-desc" className="create-input" onChange={this.handleDescriptionChange}/>
+                </div>
+              </div>
+
+              <div className="create-row">
+                <div className="create-label-container">
+                    <label for="rocket-start" className="create-label">When can you begin taking riders?</label>
+                </div>
+                <div className="create-input-container">
+                    <input type="date" id="rocket-start" className="create-input" onChange={this.handleStartDateChange} />
+                </div>
+              </div>
+
+              <div className="create-row">
+                <div className="create-label-container">
+                    <label for="rocket-end" className="create-label">And until what date?</label>
+                </div>
+                <div className="create-input-container">
+                  <input type="date" id="rocket-end" className="create-input" onChange={this.handleEndDateChange}/>
+                </div>
+              </div>
+
+                <div className="create-row">
+                  <div className="create-label-container">
+                    <label for="upload-button" className="create-label">Show off your craft with a nice photo.</label>
+                  </div>
+                  <div className="create-input-container">
+                    <button className="photo-upload-button" onClick={this.handlePhotoUpload}>{photo_verb} Photo</button>
+                    {img_tag}
+                  </div>
+                </div>
+
+
+                <div className="create-row">
+                    <button type="submit" className="btn btn-primary" className="create-btn">List your craft!</button>
+
+                </div>
+              </form>
+        </div>
+      </img>
 
     </div>)
   }

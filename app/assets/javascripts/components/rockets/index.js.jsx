@@ -35,7 +35,9 @@ window.RocketIndex = React.createClass ({
       <Navbar />
 
       <div className="row" className="filter-form">
-        <FilterForm />
+        <img src="assets/back-5.jpg" className="background-image">
+          <FilterForm />
+        </img>
       </div>
 
       <div id="rocket-index" className="row" className="rocket-index">

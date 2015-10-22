@@ -13,7 +13,7 @@ h1, h2, p, strong, em, a {
   text-align: inherit;
   color: inherit;
   background: none;
-  background-color: none;
+  background-color: #000;
   height: 100%;
   width: 100%;
   font-family: "Inconsolata";
@@ -102,6 +102,8 @@ button:hover {
 
 #rocket-index {
   position: relative;
+  margin-left: 150px;
+  margin-top: 150px;
   background: #000 image-url("back-5.jpg") center center;
 }
 
@@ -115,12 +117,8 @@ button:hover {
     height: 300px;
     width: 400px;
     float: left;
-<<<<<<< 6fe8eff56705b88c668995fee2b74c9229797537
-
-=======
     text-align: center;
     background: transparent;
->>>>>>> Improvements to navbar
 }
 .index-item-container {
   position: relative;
@@ -139,12 +137,9 @@ button:hover {
 
 .index-item-container:hover {
   .rocket-info {
-<<<<<<< 6fe8eff56705b88c668995fee2b74c9229797537
     display: inline;
-=======
     transition: 0.3s;
     display: block;
->>>>>>> Improvements to navbar
   }
 
   .rocket-photo {
@@ -152,10 +147,6 @@ button:hover {
     height: 310px;
     width: 415px;
     opacity: 0.4;
-<<<<<<< 6fe8eff56705b88c668995fee2b74c9229797537
-
-=======
->>>>>>> Improvements to navbar
   }
 }
 
@@ -166,13 +157,11 @@ button:hover {
 .rocket-info {
     position: absolute;
     display: none;
-<<<<<<< 6fe8eff56705b88c668995fee2b74c9229797537
     padding: 50px;
     padding-top: 100px;
     text-align:center;
     font-weight: normal;
-    color: #333;
-=======
+    color: #ddd;
     text-align: center;
     // top: 0;
     // bottom: 0;
@@ -180,15 +169,14 @@ button:hover {
     // right: 0;
     // text-align: center;
 
-    margin-top: 100px;
+    margin-top: 24px;
     width: 375px;
     margin-left: 25px;
     font-weight: 500;
-    color: #444;
->>>>>>> Improvements to navbar
     font-size: 24px;
     font-family: "Inconsolata";
     z-index: 1;
+    background-color: transparent;
 
 }
 
@@ -215,14 +203,18 @@ button:hover {
   padding: 200px;
 }
 
-<<<<<<< 6fe8eff56705b88c668995fee2b74c9229797537
 .profile-item {
   position: relative;
   display: block;
 }
 
-.profile-text {
-=======
+// .profile-text {
+.background-image {
+  position: absolute;
+  left: 11px;
+  width: 990px;
+  background: #000;
+}
 .rocket-title-prefix {
   position: absolute;
   color: white;
@@ -247,7 +239,6 @@ button:hover {
   background-color: red;
 }
 .rocket-index-pic {
->>>>>>> Improvements to navbar
   position: absolute;
   display: inline;
 }
@@ -260,23 +251,20 @@ button:hover {
 }
 
 .filter-form {
-  box-shadow: 5px 5px 5px #888888;
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 175px;
   margin: 0px;
   padding: 0px;
-  background-color: #eee;
+  padding-left: 75px;
+  background-color: #000;
   font-family: "Inconsolata";
-<<<<<<< 6fe8eff56705b88c668995fee2b74c9229797537
   font-size: 15px;
   color: #555;
   // font-size: 24px;
-=======
   color: #ccc;
   font-size: 15px;
   background: #000 image-url("back-5.jpg") left center no-repeat;
->>>>>>> Improvements to navbar
 }
 
 #content {
@@ -303,9 +291,18 @@ button:hover {
   position: relative;
 }
 
-.date-label {
+.start-date-label {
   padding-top: 4px;
+  padding-left: 38px;
   overflow: hidden;
+  font-size: 24px;
+}
+
+.end-date-label {
+  padding-top: 4px;
+  padding-left: 64px;
+  overflow: hidden;
+  font-size: 24px;
 }
 
 .date-input {
@@ -322,7 +319,9 @@ button:hover {
 
   // border-bottom: #999 solid 1px;
   // margin-top: 50px;
-  padding-top: 20px;
+  padding-top: 22px;
+  padding-left: 41px;
+  font-size: 18px;
 }
 
 .type-select {
@@ -386,6 +385,62 @@ button:hover {
 
 .navbar-links:hover {
   border: none;
+}
+
+.create-form {
+  position: absolute;
+}
+.create-label {
+  font-size: 24px;
+  font-family: "Inconsolata";
+  color: #ddd;
+}
+
+.create-form-header {
+  position: relative;
+  text-align: center;
+  font-size: 36px;
+  color: #ddd;
+  padding-bottom: 20px;
+}
+
+.create-row {
+  padding-top: 10px;
+  padding-left: 100px;
+  position: relative;
+  width: 100%;
+}
+
+.photo-upload-button {
+  background-color: #cc99cc;
+  border: none;
+  border-radius: 20px;
+}
+
+.create-label-container {
+  padding-left: 210px;
+  width: 53%;
+  position: relative;
+  display: inline-block;
+}
+
+.create-input-container {
+  width: 42%;
+  padding-left: 50px;
+  display: inline;
+  float: top;
+}
+
+.create-warning {
+  font-size: 8px;
+  text-align: center;
+  color: #ddd;
+}
+
+.create-input {
+  border-radius: 5px;
+  color: #bbb;
+  padding: 4px;
 }
 .group:after {
   content: "";

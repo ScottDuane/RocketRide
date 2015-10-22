@@ -12,10 +12,6 @@
       // debugger;
       var res = [];
       ReservationStore.all().forEach(function(reservation) {
-<<<<<<< 6fe8eff56705b88c668995fee2b74c9229797537
-=======
-
->>>>>>> Improvements to navbar
         if(reservation.rocket_id === id) {
           res.push(reservation);
         }

@@ -55,10 +55,6 @@ window.RocketShow = React.createClass ({
             </Lightbox>
 
         </div>
-
-
-
-
     </div>);
   }
 });

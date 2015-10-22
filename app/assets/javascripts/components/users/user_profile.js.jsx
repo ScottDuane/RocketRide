@@ -3,10 +3,10 @@ var UserProfile = React.createClass({
     var currentUser = UserStore.findById(window.CURRENT_USER_ID).username;
     return (<div>
       <Navbar />
-      <p>Hey there, {currentUser}</p>
 
-      <div className="row">
 
+      <img src="assets/back-5.jpg" className="background-image">
+        <div className="greeting">Hey there, {currentUser}</div>
         <div className="col-md-2"></div>
         <div className="col-md-4">
           <h2>Reservations</h2>
@@ -18,7 +18,7 @@ var UserProfile = React.createClass({
         </div>
 
         <div className="col-md-2"></div>
-      </div>
+      </img>
 
     </div>);
   }

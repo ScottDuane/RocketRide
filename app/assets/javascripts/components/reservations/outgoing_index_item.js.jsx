@@ -22,11 +22,11 @@ var OutgoingIndexItem = React.createClass ({
 
     var button = "";
     if(this.state.status === 'approved' || this.state.status === 'pending') {
-      button = <button onClick={this.handleCancellation}>Cancel Reservation</button>;
+      button = <button className="res-button" onClick={this.handleCancellation}>Cancel Reservation</button>;
     }
 
     return (
-      <div>
+      <div className="out-res-item">
         <ul>
           <li><strong>Rocket Name:</strong> {this.rocket.rocket_name} </li>
           <li><strong>Captain: </strong>{this.captain.username} </li>

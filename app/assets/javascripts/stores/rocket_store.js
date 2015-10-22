@@ -131,7 +131,7 @@
         break;
 
       case RocketConstants.ROCKET_RECEIVED:
-        RocketStore.addRocket(rocket);
+        RocketStore.addRocket(payload.rocket);
         RocketStore.emit(ROCKETS_INDEX_CHANGE_EVENT);
         break;
 

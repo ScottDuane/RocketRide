@@ -5,7 +5,8 @@ window.RocketForm = React.createClass ({
   mixins: [React.addons.LinkedStateMixin],
 
   getInitialState: function() {
-      this.photo_src = null;
+      this.photo_src = "assets/spaceship_default.png";
+      this.photo_uploaded = false;
       return {captain_id: window.CURRENT_USER_ID}
   },
 
@@ -48,6 +49,7 @@ window.RocketForm = React.createClass ({
     debugger;
     cloudinary.openUploadWidget({upload_preset: "zvecaalc"}, function(error, photo) {
       this.photo_src = photo[0].url;
+      this.photo_uploaded = true;
       this.setState({image_url: photo[0].url});
     }.bind(this));
   },
@@ -56,7 +58,8 @@ window.RocketForm = React.createClass ({
     var Link = ReactRouter.Link;
     var img_tag = "";
     var photo_verb = "Upload";
-    if(this.photo_src) {
+
+    if(this.photo_uploaded) {
       photo_verb = "Change";
       img_tag = <img src={this.photo_src} className="create-form-pic" />;
     }
@@ -68,7 +71,7 @@ window.RocketForm = React.createClass ({
         <div className="create-form">
             <form onSubmit={this.createRocket}>
               <div className="create-row" className="create-form-header">
-                Share the love.  List your spacecraft.*
+                Share the love.  List your spacecraft.
               </div>
 
 

@@ -19,7 +19,8 @@ var OutgoingReservationIndex = React.createClass ({
 
   render: function() {
     return (
-    <div>
+    <div className="out-res-index">
+      <div className="res-header">You've Made Reservations.</div>
       {this.state.reservations.map(function(reservation){
         return (<OutgoingIndexItem reservation={reservation} key={reservation.id}/>);
       })}

@@ -456,17 +456,37 @@ button:hover {
 }
 
 #create-warning {
-  font-size: 12px;
-  width: 33%;
-  margin-left: 33%;
+  font-size: 16px;
+  width: 57%;
+  margin-left: 14%;
   text-align: center;
   color: #ddd;
+}
+
+.create-form-pic {
+  width: 200px;
+  border-radius: 10px;
+  border: #555 dotted;
+  margin-left: 20px;
 }
 
 .create-input {
   border-radius: 5px;
   color: #bbb;
   padding: 4px;
+}
+
+.out-res-index {
+  color: #444;
+}
+
+.res-button {
+  color: #444;
+  background-color: #9999ff;
+  length: 100px;
+  height: 50px;
+  border: none;
+  border-radius: 20px;
 }
 .group:after {
   content: "";

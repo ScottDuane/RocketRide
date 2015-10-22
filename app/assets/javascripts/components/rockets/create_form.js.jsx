@@ -68,12 +68,10 @@ window.RocketForm = React.createClass ({
         <div className="create-form">
             <form onSubmit={this.createRocket}>
               <div className="create-row" className="create-form-header">
-                Share the love.  List your spacecraft.
+                Share the love.  List your spacecraft.*
               </div>
 
-              <div className="create-row" id="create-warning">
-                RocketRide is not responsible for damage to crafts (e.g., phaser burns on walls, stolen cargo, etc.) or personal injuries (e.g., Reever bites, mind control-related trauma, etc.).
-              </div>
+
               <div className="create-row">
                 <div className="create-label-container">
                   <label for="rocket-name" className="create-label">What's the name of your craft?</label>
@@ -133,8 +131,11 @@ window.RocketForm = React.createClass ({
 
 
                 <div className="create-row">
-                    <button type="submit" className="btn btn-primary" className="create-btn">List your craft!</button>
+                    <button type="submit" className="create-button">List your craft!</button>
 
+                </div>
+                <div className="create-row" id="create-warning">
+                  RocketRide is not responsible for damage to crafts (e.g., phaser burns on walls, stolen cargo, etc.) or personal injuries (e.g., Reever bites, mind control-related trauma, etc.).
                 </div>
               </form>
         </div>

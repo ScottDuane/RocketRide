@@ -413,8 +413,35 @@ button:hover {
 
 .photo-upload-button {
   background-color: #cc99cc;
+  height: 50px;
+  width: 120px;
+  color: #444;
   border: none;
   border-radius: 20px;
+}
+
+.photo-upload-button:hover {
+  background-color: white;
+  border: #cc99cc solid 1px;
+  color: #cc99cc;
+
+}
+
+.create-button {
+  background-color: #9999ff;
+  border: none;
+  border-radius: 40px;
+  margin-left: 33%;
+  font-size: 18px;
+  width: 200px;
+  height: 60px;
+  color: #444;
+}
+
+.create-button:hover {
+  background-color: white;
+  color: #9999ff;
+  border: #9999ff solid 1px;
 }
 
 .create-label-container {
@@ -431,8 +458,10 @@ button:hover {
   float: top;
 }
 
-.create-warning {
-  font-size: 8px;
+#create-warning {
+  font-size: 12px;
+  width: 33%;
+  margin-left: 33%;
   text-align: center;
   color: #ddd;
 }

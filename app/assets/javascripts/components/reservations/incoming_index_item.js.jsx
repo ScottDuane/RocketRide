@@ -1,6 +1,7 @@
 var IncomingIndexItem = React.createClass ({
   getInitialState: function() {
-    this.creator = UserStore.findById(this.props.reservation.creator_id);
+    this.creator = UserStore.findById(this.props.reservation.creator_id) || "";
+    this.creator_name = this.creator.username || "";
     return {status: this.props.reservation.status};
   },
 
@@ -34,9 +35,10 @@ var IncomingIndexItem = React.createClass ({
       return;
     }
 
-    return <div className="inc-res-text">
-      {this.creator.username} has {verb} a ride with you from {this.props.reservation.start_date} until {this.props.reservation.end_date}.
-      {endText}
-    </div>;
+    return
+      (<div className="inc-res-text">
+        <p>{this.creator_name} has {verb} a ride with you from {this.props.reservation.start_date} until {this.props.reservation.end_date}.
+        {endText}</p>
+      </div>);
   }
-})
+});

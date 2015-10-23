@@ -67,7 +67,7 @@ window.RocketForm = React.createClass ({
     return(
       <div>
       <Navbar />
-        <img src="assets/back-5.jpg" className="background-image">
+        <img src="images/back-5.jpg" className="background-image">
         <div className="create-form">
             <form onSubmit={this.createRocket}>
               <div className="create-row" className="create-form-header">

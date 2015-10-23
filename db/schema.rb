@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151016220007) do
+ActiveRecord::Schema.define(version: 20151023032953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ratings", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "rater_id",   null: false
+    t.integer  "rocket_id",  null: false
+    t.integer  "rating",     null: false
+  end
 
   create_table "reservations", force: :cascade do |t|
     t.datetime "created_at", null: false

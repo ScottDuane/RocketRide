@@ -3,7 +3,6 @@ window.ApiUtil = {
     $.ajax ({
       url: 'api/rockets',
       success: function(rockets) {
-        console.log("success");
         ApiActions.receiveAllRockets(rockets);
       },
       failure: function(err) {

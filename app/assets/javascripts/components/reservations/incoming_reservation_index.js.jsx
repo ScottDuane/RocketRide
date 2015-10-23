@@ -19,11 +19,11 @@ var IncomingReservationIndex = React.createClass ({
   },
 
   render: function() {
-    return(<div className="inc-res-index">
-      {this.state.reservations.map(function(reservation) {
-        return <div className="inc-res-item"><IncomingIndexItem reservation={reservation} /></div>;
-      })}
-
-    </div>)
+    return(
+      <div className="inc-res-index">
+        {this.state.reservations.map(function(reservation) {
+          return (<div className="inc-res-item"><IncomingIndexItem reservation={reservation} key={reservation.id}/></div>);
+        })}
+      </div>);
   }
-})
+});

@@ -6,7 +6,7 @@ window.Navbar = React.createClass({
     ApiUtil.fetchAllUsers();
     ApiUtil.fetchAllRockets();
     ApiUtil.fetchAllReservations();
-    this.current_user = UserStore.findById(window.CURRENT_USER_ID);
+//    this.current_user = UserStore.findById(window.CURRENT_USER_ID);
     return {};
   },
 
@@ -19,7 +19,6 @@ window.Navbar = React.createClass({
     return (
       <nav className="myNavbar" className="navbar navbar-default">
       <div className="container-fluid">
-
         <div className="navbar-header">
           <button type="button" className="navbar-toggle collapsed"
                   data-toggle="collapse"
@@ -48,20 +47,15 @@ window.Navbar = React.createClass({
                 <button id="profile-link" className="navbar-links no-border">Your Profile</button>
               </a>
             </li>
-
             <li>
               <a href="#">
                 <button id="logout-link" className="navbar-links no-border" onClick={this.logOutClickHandler}>Log Out</button>
               </a>
           </li>
-
-
-
           </ul>
         </div>
-
       </div>
       </nav>
     );
   }
-})
+});

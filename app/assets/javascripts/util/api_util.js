@@ -73,9 +73,10 @@ window.ApiUtil = {
     $.ajax ({
       url: 'api/reservations/'+reservation.id,
       method: 'patch',
-      data: JSON.stringify({status: 'cancelled'}),
-      success: function(reservation) {
-        ApiActions.deleteReservation(reservation);
+      data: {status: 'cancelled'},
+      success: function(updated_reservation) {
+        console.log(updated_reservation);
+        ApiActions.deleteReservation(updated_reservation);
 
       }
     });
@@ -85,9 +86,9 @@ window.ApiUtil = {
     $.ajax ({
       url: 'api/reservations/' + reservation.id,
       method: 'patch',
-      data: JSON.stringify({status: 'denied'}),
-      succesion: function(reservation) {
-        ApiActions.updateReservation(reservation);
+      data: {status: 'denied'},
+      success: function(updated_reservation) {
+        ApiActions.updateReservation(updated_reservation);
       }
     });
   },
@@ -96,9 +97,9 @@ window.ApiUtil = {
     $.ajax ({
       url: 'api/reservations/' + reservation.id,
       method: 'patch',
-      data: JSON.stringify({status: 'approved'}),
-      success: function(reservation) {
-        ApiActions.updateReservation(reservation);
+      data: {status: 'approved'},
+      success: function(updated_reservation) {
+        ApiActions.updateReservation(updated_reservation);
       }
     });
   }

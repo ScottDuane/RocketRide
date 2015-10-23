@@ -15,13 +15,13 @@ var IncomingReservationIndex = React.createClass ({
   },
 
   _onChange: function() {
-    this.setState({reservations: ReservationStore.ownedReservations(CURRENT_USER_ID)});
+    this.setState({reservations: ReservationStore.ownedReservations(CURRENT_USER_ID, this.props.rocket.id)});
   },
 
   render: function() {
     return(<div className="inc-res-index">
       {this.state.reservations.map(function(reservation) {
-        return <div className="inc-res-item"><IncomingIndexItem reservation={reservation} /></div>
+        return <div className="inc-res-item"><IncomingIndexItem reservation={reservation} /></div>;
       })}
 
     </div>)

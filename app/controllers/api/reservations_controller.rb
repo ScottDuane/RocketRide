@@ -21,9 +21,9 @@ class Api::ReservationsController < ApplicationController
     else
       render @reservation.errors.full_messages, status: 422
     end
-  end  
+  end
 
   def reservation_params
-    params.permit(:rocket_id, :start_date, :end_date, :status)
+    params.permit(:rocket_id, :start_date, :end_date, :status, :description)
   end
 end

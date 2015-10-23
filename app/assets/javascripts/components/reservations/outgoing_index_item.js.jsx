@@ -15,7 +15,7 @@ var OutgoingIndexItem = React.createClass ({
   render: function() {
     var Link = ReactRouter.Link;
     var verb = "";
-    var rocket_url = "#/rockets/" + this.rocket.id;
+    var rocket_url = "rockets/" + this.rocket.id;
     if(this.props.reservation.status === 'pending') {
       verb = 'requested';
     } else {
@@ -25,6 +25,8 @@ var OutgoingIndexItem = React.createClass ({
     var button = "";
     if(this.state.status === 'approved' || this.state.status === 'pending') {
       button = <button className="res-button" onClick={this.handleCancellation}>Cancel Reservation</button>;
+    } else {
+      button = <Link to={rocket_url}><button className="res-button">Reserve Again</button></Link>;
     }
 
     if(this.state.status === 'approved') {

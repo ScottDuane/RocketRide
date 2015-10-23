@@ -15,14 +15,15 @@ var IncomingIndexItem = React.createClass ({
   },
 
   handleCancellation: function() {
-    ApiUtil.denyReservation(this.props.reservation);
+  //  var updated_res = this.props.reservation;
+  //  updated_red.status = 'cancelled';
+    ApiUtil.cancelReservation(this.props.reservation);
     this.setState({status: 'cancelled'});
   },
 
   render: function() {
     var endText = "";
     var verb = "";
-
     if(this.state.status === 'pending') {
       endText = <div><p>This reservation is <strong>pending.</strong></p><button onClick={this.handleApproval}>Approve</button><button onClick={this.handleDenial}>Deny</button></div>;
       verb = "requested";
@@ -33,9 +34,9 @@ var IncomingIndexItem = React.createClass ({
       return;
     }
 
-    return <div>
-      <p>{this.creator.username} has {verb} a ride with you from {this.props.reservation.start_date} until {this.props.reservation.end_date}.</p>
+    return <div className="inc-res-text">
+      {this.creator.username} has {verb} a ride with you from {this.props.reservation.start_date} until {this.props.reservation.end_date}.
       {endText}
-    </div>
+    </div>;
   }
 })

@@ -160,6 +160,24 @@ button:hover {
   opacity: 1;
   transition: opacity 1s ease-in;
 }
+
+.animation-appear {
+  opacity: 0.1;
+}
+
+.animation-appear.animation-appear-active {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
+.animation-leave {
+  opacity: 1;
+}
+
+.animation-leave.animation-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
 .rocket-info {
     position: absolute;
     display: none;
@@ -194,9 +212,10 @@ button:hover {
 }
 .rocket-profile-container {
   height: 500px;
-  width: 100%;
+  width: 80%;
   padding-top: 0px;
   margin-top: 0px;
+  margin-left: 20%;
   overflow: hidden;
   position: relative;
 }
@@ -591,6 +610,10 @@ button:hover {
   position: relative;
   margin-left: 200px;
   background-color: black;
+}
+
+.rating-show {
+  color: #ddd;
 }
 .group:after {
   content: "";

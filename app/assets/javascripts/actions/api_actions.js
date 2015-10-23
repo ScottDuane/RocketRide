@@ -64,7 +64,7 @@ window.ApiActions = {
     });
   },
 
-  receiveRatings: function(ratings) {
+  receiveAllRatings: function(ratings) {
     AppDispatcher.dispatch({
       actionType: RatingConstants.RATINGS_RECEIVED,
       ratings: ratings

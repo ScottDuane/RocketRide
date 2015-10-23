@@ -23,23 +23,27 @@
       _ratings = ratings;
     },
 
+    addRating: function(rating) {
+      _ratings.push(rating);
+    },
+
     addIndexChangeListener: function(callback) {
-      ReservationStore.on(RATINGS_CHANGE, callback);
+      RatingsStore.on(RATINGS_CHANGE, callback);
     },
 
     removeIndexChangeListener: function(callback) {
-      ReservationStore.removeListener(RATINGS_CHANGE, callback);
+      RatingsStore.removeListener(RATINGS_CHANGE, callback);
     },
 
     dispatcherId: AppDispatcher.register(function(payload) {
       switch(payload.actionType) {
         case RatingConstants.RATINGS_RECEIVED:
-          RatingStore.resetRating(payload.ratings);
-          RatingStore.emit(RATINGS_CHANGE);
+          RatingsStore.resetRatings(payload.ratings);
+          RatingsStore.emit(RATINGS_CHANGE);
           break;
         case RatingConstants.RATING_RECEIVED:
-          RatingStore.addRating(payload.rating);
-          RatingStore.emit(RATINGS_CHANGE);
+          RatingsStore.addRating(payload.rating);
+          RatingsStore.emit(RATINGS_CHANGE);
           break;
       }
     })

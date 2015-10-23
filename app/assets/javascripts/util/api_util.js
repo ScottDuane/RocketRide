@@ -104,12 +104,16 @@ window.ApiUtil = {
   },
 
   createRating: function(rating) {
+    debugger;
     $.ajax ({
       url: 'api/ratings',
       method: 'post',
       data: rating,
       success: function(posted_rating) {
         ApiActions.addRating(posted_rating);
+      },
+      failure: function(err) {
+        console.log(err);
       }
     });
   },

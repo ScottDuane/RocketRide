@@ -4,11 +4,12 @@ class Api::RatingsController < ApplicationController
   end
 
   def create
+    puts "Params are #{rating_params}"
     @rating = Rating.new(rating_params)
     if @rating.save
       render json: @rating
     else
-      render @rating.errors.full_messages
+      render @rating.errors.full_messages, status: 422
     end
   end
 
@@ -22,7 +23,7 @@ class Api::RatingsController < ApplicationController
   end
 
   def rating_params
-    params.require(:rating).permit(:rocket_id, :user_id, :rating)
+    params.permit(:rocket_id, :rater_id, :rating, :body)
   end
 
 end

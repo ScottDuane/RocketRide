@@ -1,11 +1,25 @@
-window.RocketShow = React.createClass ({
+var RocketShow = React.createClass ({
   getInitialState: function() {
     // ApiUtil.fetchAllUsers();
     // debugger;
-    this.captain = "Captain Blankety Blank";
+
+    this.captain = "";
     this.rocket = this.findRocketById(parseInt(this.props.params.id)) || "";
     this.findCaptainById(this.rocket.captain_id);
-    return {};
+    var ratings = RatingsStore.findByRocketId(parseInt(this.props.params.id));
+    return {ratings: ratings};
+  },
+
+  componentDidMount: function() {
+    RatingsStore.addIndexChangeListener(this._onRatingsChange);
+  },
+
+  componentWillUnmount: function() {
+    RatingsStore.removeIndexChangeListener(this._onRatingsChange);
+  },
+
+  _onRatingsChange: function(){
+    this.setState({ratings: RatingsStore.findByRocketId(this.props.params.id)});
   },
 
   findRocketById: function(id) {
@@ -34,8 +48,8 @@ window.RocketShow = React.createClass ({
 
   render: function() {
     var imgURL = this.rocket.image_url || 'assets/spaceship_default.jpeg';
-
     var Link = ReactRouter.Link;
+
     return (
       <div>
         <Navbar />
@@ -54,6 +68,14 @@ window.RocketShow = React.createClass ({
             </Lightbox>
         </div>
         <RatingForm rocket={this.rocket} />
+
+        <ul className="rating-list">
+          {
+            this.state.ratings.map(function(rating){
+              return (<li key={rating.id}></li>)
+            })
+          }
+        </ul>
         </img>
     </div>);
   }

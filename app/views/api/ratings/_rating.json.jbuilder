@@ -1,1 +1,1 @@
-json.extract! rating, :id, :rocket_id, :rator_id, :body, :rating
+json.extract! rating, :id, :rocket_id, :rater_id, :body, :rating

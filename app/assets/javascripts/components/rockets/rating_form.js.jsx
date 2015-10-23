@@ -1,6 +1,6 @@
 var RatingForm = React.createClass({
   getInitialState: function () {
-    return {body: "", rating: 5}
+    return {rater_id: window.CURRENT_USER_ID, rocket_id: this.props.rocket.id, body: "", rating: 5}
   },
 
   componentDidMount: function() {
@@ -15,14 +15,9 @@ var RatingForm = React.createClass({
     console.log(this.state);
   },
 
-  navigateToRocketShow: function () {
-    var rocketUrl = "/rocket/" + this.props.params.rocket_id;
-    this.props.history.pushState(null, rocketUrl);
-  },
-
   handleRatingChange: function(e) {
     e.preventDefault();
-    this.setState({rating: e.target.value});
+    this.setState({rating: parseInt(e.target.value)});
   },
 
   handleBodyChange: function(e) {
@@ -32,12 +27,7 @@ var RatingForm = React.createClass({
 
   handleSubmit: function(e) {
     e.preventDefault();
-    var rating = $.extend(
-    {},
-    this.state,
-    { rocket_id: this.props.rocket.id }
-    );
-    ApiUtil.createRating(rating);
+    ApiUtil.createRating(this.state);
   },
 
   render: function() {

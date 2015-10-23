@@ -101,5 +101,16 @@ window.ApiUtil = {
         ApiActions.updateReservation(updated_reservation);
       }
     });
+  },
+
+  createRating: function(rating) {
+    $.ajax ({
+      url: 'api/rockets'+rating.rocket_id+'ratings',
+      method: 'post',
+      data: rating,
+      success: function(posted_rating) {
+        ApiActions.addRating(posted_rating);
+      }
+    });
   }
 };

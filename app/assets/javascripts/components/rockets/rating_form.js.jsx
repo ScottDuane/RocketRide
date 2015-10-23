@@ -4,23 +4,40 @@ var RatingForm = React.createClass({
   },
 
   componentDidMount: function() {
-    RocketStore.addRatingsChangeListener(this._onChange);
+    RatingsStore.addIndexChangeListener(this._onChange);
   },
 
   componentWillUnmount: function() {
-    RocketStore.removeRatingsChangeListener(this._onChange);
+    RatingsStore.removeIndexChangeListener(this._onChange);
+  },
+
+  _onChange: function() {
+    console.log(this.state);
+  },
+
+  navigateToRocketShow: function () {
+    var rocketUrl = "/rocket/" + this.props.params.rocket_id;
+    this.props.history.pushState(null, rocketUrl);
   },
 
   handleRatingChange: function(e) {
+    e.preventDefault();
     this.setState({rating: e.target.value});
   },
 
   handleBodyChange: function(e) {
+    e.preventDefault();
     this.setState({body: e.target.value});
   },
 
-  handleSubmit: function() {
-    ApiUtil.createRating(this.state);
+  handleSubmit: function(e) {
+    e.preventDefault();
+    var rating = $.extend(
+    {},
+    this.state,
+    { rocket_id: this.props.rocket.id }
+    );
+    ApiUtil.createRating(rating);
   },
 
   render: function() {
@@ -32,7 +49,7 @@ var RatingForm = React.createClass({
           <input type="number" onChange={this.handleRatingChange}/>
           <br/>
 
-          <label>Comment</label>
+          <label>Did you love or hate your ride?  Tell us.</label>
           <br/>
           <textarea
             cols='30'

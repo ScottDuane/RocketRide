@@ -9,7 +9,9 @@ RocketRideApp = function() {
     <IndexRoute component={RocketIndex} />
     <Route path='/' component={RocketIndex} />
     <Route path='rockets/new' component={RocketForm} />
-    <Route path='rockets/:id' component={RocketShow} />
+    <Route path='rockets/:id' component={RocketShow}>
+      <Route path='rating' componenet={RatingForm} />
+    </Route>
     <Route path='users/:id' component={UserProfile} />
   </Router>, document.getElementById('content'));
 };

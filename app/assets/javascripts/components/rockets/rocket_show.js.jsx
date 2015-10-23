@@ -53,7 +53,7 @@ window.RocketShow = React.createClass ({
               </LightboxModal>
             </Lightbox>
         </div>
-
+        <RatingForm rocket={this.rocket} />
         </img>
     </div>);
   }

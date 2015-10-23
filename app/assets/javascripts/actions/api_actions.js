@@ -55,5 +55,19 @@ window.ApiActions = {
       actionType: RocketConstants.FILTERED_ROCKETS_RECEIVED,
       rockets: rockets
     });
+  },
+
+  addRating: function(rating) {
+    AppDispatcher.dispatch({
+      actionType: RatingConstants.RATING_RECEIVED,
+      rating: rating
+    });
+  },
+
+  receiveRatings: function(ratings) {
+    AppDispatcher.dispatch({
+      actionType: RatingConstants.RATINGS_RECEIVED,
+      ratings: ratings
+    });
   }
 };

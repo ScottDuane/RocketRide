@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :rockets
     resources :users
-    resources :reservations 
+    resources :reservations
+    resources :ratings 
   end
 end

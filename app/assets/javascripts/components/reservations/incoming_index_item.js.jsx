@@ -32,7 +32,7 @@ var IncomingIndexItem = React.createClass ({
       endText = <div><button onClick={this.handleCancellation}>Cancel Reservation</button></div>;
       verb = "reserved";
     } else {
-      return;
+      return <div></div>;
     }
 
     return

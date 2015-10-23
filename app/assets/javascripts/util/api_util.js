@@ -105,11 +105,20 @@ window.ApiUtil = {
 
   createRating: function(rating) {
     $.ajax ({
-      url: 'api/rockets'+rating.rocket_id+'ratings',
+      url: 'api/ratings',
       method: 'post',
       data: rating,
       success: function(posted_rating) {
         ApiActions.addRating(posted_rating);
+      }
+    });
+  },
+
+  fetchAllRatings: function() {
+    $.ajax ({
+      url: 'api/ratings',
+      success: function(ratings) {
+        ApiActions.receiveAllRatings(ratings);
       }
     });
   }

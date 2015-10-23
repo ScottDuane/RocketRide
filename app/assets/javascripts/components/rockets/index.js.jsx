@@ -1,6 +1,8 @@
 /* global React */
 
 window.RocketIndex = React.createClass ({
+  mixins: [React.addons.ReactCSSTransitionGroup],
+
   getInitialState: function() {
     return {rockets: RocketStore.all()}
   },
@@ -28,6 +30,7 @@ window.RocketIndex = React.createClass ({
   },
 
   render: function() {
+    var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
     // debugger;
     var Link = ReactRouter.Link;
     var userURL = 'users/'+CURRENT_USER_ID;
@@ -39,13 +42,13 @@ window.RocketIndex = React.createClass ({
           <FilterForm />
         </img>
       </div>
-
       <div id="rocket-index" className="row" className="rocket-index">
+      <ReactCSSTransitionGroup transitionName="animation" transitionEnterTimeout={500} transitionLeaveTimeout={300} >
         {this.state.rockets.map(function(rocket){
           return (<RocketIndexItem rocket={rocket} key={rocket.id}/>);
         })}
+      </ReactCSSTransitionGroup>
       </div>
-
   </div>);
   }
 });

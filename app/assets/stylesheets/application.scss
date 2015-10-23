@@ -122,7 +122,6 @@ button:hover {
 }
 .index-item-container {
   position: relative;
-
 }
 .rocket-photo {
     position: absolute;
@@ -153,7 +152,14 @@ button:hover {
 // div.img a:hover img {
 //     border:1px solid #0000ff;
 // }
+.animation-enter {
+  opacity: 0.1;
+}
 
+.animation-enter.animation-enter-active {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
 .rocket-info {
     position: absolute;
     display: none;
@@ -581,8 +587,10 @@ button:hover {
 }
 
 .rating-form {
-  color: #ddd;
-  background-color: magenta;
+  color: #444;
+  position: relative;
+  margin-left: 200px;
+  background-color: black;
 }
 .group:after {
   content: "";

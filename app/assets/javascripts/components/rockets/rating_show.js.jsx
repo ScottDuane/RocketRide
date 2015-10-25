@@ -1,14 +1,16 @@
-var RatingShow = React.createClass({
-  getInitialState() {
-    this.username = UserStore.findById(this.props.rating.rater_id).username;
-    return {};
-  },
+var RatingsShow = React.createClass({
 
   render: function() {
+
     return(
-      <div className="rating-show">
-        <p>{this.props.rating.rating} {this.username} says:</p>
-        <p>{this.props.rating.body}</p>
+      <div className="ratings-show">
+        <ul>
+          {this.props.ratings.map(function(rating) {
+            var username = UserStore.findById(rating.rater_id).username;
+            
+            return <div><li>{rating.rating} {username} says: {rating.body}</li></div>;
+          })}
+        </ul>
       </div>
     );
   }

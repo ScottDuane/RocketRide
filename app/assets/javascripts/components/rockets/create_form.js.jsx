@@ -46,7 +46,6 @@ window.RocketForm = React.createClass ({
 
   handlePhotoUpload: function(e) {
     e.preventDefault();
-    debugger;
     cloudinary.openUploadWidget({upload_preset: "zvecaalc"}, function(error, photo) {
       this.photo_src = photo[0].url;
       this.photo_uploaded = true;

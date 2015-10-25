@@ -6,7 +6,7 @@ var RocketShow = React.createClass ({
     this.captain = "";
     this.rocket = this.findRocketById(parseInt(this.props.params.id)) || "";
     this.findCaptainById(this.rocket.captain_id);
-    var ratings = RatingsStore.findByRocketId(parseInt(this.props.params.id));
+    var ratings = RatingsStore.findByRocketId(parseInt(this.rocket.id)) || [];
     return {ratings: ratings};
   },
 
@@ -19,7 +19,7 @@ var RocketShow = React.createClass ({
   },
 
   _onRatingsChange: function(){
-    this.setState({ratings: RatingsStore.findByRocketId(this.props.params.id)});
+    this.setState({ratings: RatingsStore.findByRocketId(this.rocket.id)});
   },
 
   findRocketById: function(id) {
@@ -49,7 +49,7 @@ var RocketShow = React.createClass ({
   render: function() {
     var imgURL = this.rocket.image_url || 'assets/spaceship_default.jpeg';
     var Link = ReactRouter.Link;
-
+    debugger;
     return (
       <div>
         <Navbar />
@@ -58,24 +58,12 @@ var RocketShow = React.createClass ({
           <img src={imgURL} className="rocket-profile-pic" />
           <p className="rocket-title-prefix">Fly with {this.captain} on the</p>
           <p className="rocket-title">{this.rocket.rocket_name}</p>
-            <Lightbox>
-              <LightboxTrigger>
-                  <button className="request-button">Request Reservation</button>
-              </LightboxTrigger>
-              <LightboxModal>
-                  <ReservationForm rocket={this.rocket} />
-              </LightboxModal>
-            </Lightbox>
+
         </div>
         <RatingForm rocket={this.rocket} />
+        <div id="test-ratings">{this.state.ratings}</div>
+        <RatingsShow ratings={this.state.ratings} />
 
-        <ul className="rating-list">
-          {
-            this.state.ratings.map(function(rating){
-              return (<li key={rating.id}></li>)
-            })
-          }
-        </ul>
         </img>
     </div>);
   }

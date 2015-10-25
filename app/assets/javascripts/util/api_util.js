@@ -104,7 +104,7 @@ window.ApiUtil = {
   },
 
   createRating: function(rating) {
-    debugger;
+    // debugger;
     $.ajax ({
       url: 'api/ratings',
       method: 'post',

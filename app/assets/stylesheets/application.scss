@@ -357,7 +357,7 @@ button:hover {
   display: block;
   padding-left: 15px;
 }
-.navbar {
+.myNavbar {
   position: relative;
   height: 200px;
   border: none;
@@ -381,31 +381,50 @@ button:hover {
 #add-rocket-link {
   background-color: #cc99cc;
 }
-.navbar li {
+.myNavbar li {
   margin: 0px;
   padding: 0px;
 }
 
-.navbar a {
+.myNavbar a {
   padding-bottom: 5px;
   padding-top: 20px;
   margin-bottom: 0px;
 
 }
-.navbar-nav > li > a {
-  margin-top: 25px;
-}
+
 .navbar-links {
   border: none;
   padding: 0px;
   margin: 0px;
   border-radius: 20px;
-  width: 120px;
+  width: 135px;
   height: 50px;
   color: black;
+  position: relative;
+  float: right;
+  padding-top: 10px;
+}
+
+.navbar-links li {
+  padding-bottom: 10px;
+  :hover {
+    border: none;
+  }
+}
+.nav-button {
+  position: relative;
+  border: none;
+  margin-bottom: 10px;
+  height: 47px;
+  border-radius: 16px;
+
 }
 
 .navbar-links:hover {
+  border: none;
+}
+.nav-button:hover {
   border: none;
 }
 
@@ -614,6 +633,10 @@ button:hover {
 
 .rating-show {
   color: #ddd;
+}
+
+#test-ratings {
+  color: magenta;
 }
 .group:after {
   content: "";

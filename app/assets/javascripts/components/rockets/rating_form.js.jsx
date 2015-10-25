@@ -15,6 +15,10 @@ var RatingForm = React.createClass({
     console.log(this.state);
   },
 
+  handleCancel: function(e) {
+    this.setState({rating: 5, body: ""});
+  },
+
   handleRatingChange: function(e) {
     e.preventDefault();
     this.setState({rating: parseInt(e.target.value)});
@@ -48,7 +52,7 @@ var RatingForm = React.createClass({
           <br/>
           <input type="submit"/>
         </form>
-        <button onClick={this.handleCancel}>Cancel</button>
+
       </div>);
   }
 })

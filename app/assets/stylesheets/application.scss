@@ -24,46 +24,142 @@ ul, li {
   padding: 10px;
 }
 
-.jumbotron {
-  position: relative;
-  background: #000 image-url("background_space.jpg") center center;
-
-  background-size: 100% 100%;
-  // height: 100%;
-  // width: 100%;
-  overflow: hidden;
-}
-
 .my-info {
   // opacity: 0.4;
-  font-family: 'Noto Sans', sans-serif;
-  position: absolute;
-  text-align: center;
-  border-radius: 10px;
-  color: #ccc;
-  background-color: transparentize(#999, 0.6);
-  margin-top: 100px;
-  padding-top: 20px;
+  font-family: 'Inconsolata';
+  position: relative;
+
+  color: #ddd;
+  // // background-color: transparentize(#999, 0.6);
+  // background: image-url("back-5.jpg");
+  margin-top: 226px;
+  margin-left: 300px;
 }
 
+.my-title {
+  font-size: 48px;
+}
 .info-text {
   padding: 10px;
   color: #ccc;
 }
 
-.input-group .form-control:last-child {
-  background-color: transparentize(darkblue, 0.8);
+#loginbox {
+  margin-top: 100px;
+}
+#loginusername, #loginpassword, #signup-username, #signup-password {
+  color: #444;
+  padding: 15px;
+  border-radius: 17px;
+  width: 300px;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 25px;
 }
 
-#login-username, #login-password, #signup-username, #signup-password {
-  color: #ccc;
+#login-button {
+  margin-top: 20px;
+  border-radius: 17px;
+  background-color: #cc6666;
+  color: #444;
+  border: none;
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  :hover {
+    color: #ddd;
+  }
 }
 
+#signup-button {
+  margin-top: 20px;
+  border-radius: 17px;
+  background-color: #cc99cc;
+  color: #444;
+  border: none;
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  :hover {
+    color: #ddd;
+  }
+
+}
+.side-bar {
+  width: 127px;
+  position: absolute;
+  float: left;
+  height: 500px;
+  margin-left: -273px;
+  margin-top: 28px;
+
+  background-color: #cc6666;
+}
+
+.splash-links {
+  display: block;
+  padding: 0px;
+}
+
+#signup-link {
+  position: relative;
+  float: left;
+  background-color: #cc99cc;
+  border: none;
+  :hover {
+    border: none;
+    color: #cc99cc;
+    background-color: #ddd;
+  }
+}
+
+#guest-login {
+  position: relative;
+  float: left;
+  margin-left: 31px;
+  background-color: #fe9b00;
+  border: none;
+  :hover {
+    border: none;
+    color: #fe9b00;
+    background-color: #ddd;
+  }
+}
+
+#login-link {
+  position: relative;
+  float: left;
+  background-color: #fe9b00;
+  border: none;
+  :hover {
+    border: none;
+    color: #fe9b00;
+    background-color: #ddd;
+  }
+}
+
+#user-photo-upload {
+  position: relative;
+  float: left;
+  margin-left: 31px;
+  background-color: #9999ff;
+  border: none;
+  :hover {
+    border: none;
+    color: #9999ff;
+    background-color: #ddd;
+  }
+}
+.splash-button {
+  width: 133px;
+  margin-top: 20px;
+  border-radius: 20px;
+  height: 50px;
+  font-size: 18px;
+  color: #444;
+}
 .cover-page {
-    background: image-url("background_space.jpg") center center;
-    z-index: -1;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: image-url("navbar-image.jpg") left top no-repeat;
     position: absolute;
     left: 0;
     right: 0;
@@ -76,7 +172,23 @@ ul, li {
   color: transparentize(#ccc, 0.2);
 }
 
+.pic-frame {
+  width: 500px;
+  height: 329px;
+  position: absolute;
+  float: right;
+  margin-left: 150px;
+  margin-top: -278px;
+}
 
+.profile-placeholder {
+  float: right;
+  position: absolute;
+  margin-left: 253px;
+  margin-top: -235px;
+  max-width: 295px;
+  height: 234px;
+}
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
     background: transparent;
     width: 125px;
@@ -205,27 +317,57 @@ button:hover {
 }
 
 .rocket-profile-pic {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.7;
-  width: 100%;
-}
-.rocket-profile-container {
-  height: 500px;
-  width: 80%;
-  padding-top: 0px;
-  margin-top: 0px;
-  margin-left: 20%;
-  overflow: hidden;
   position: relative;
+  float: right;
+  width: 40%;
+  z-index: 1;
+  border-radius: 10px;
+  margin-right: 50px;
 }
 
+.captain-name {
+  position: relative;
+  float: left;
+  color: #ddd;
+  z-index: 1;
+  height: 25px;
+  font-size: 26px;
+  margin-top: 24px;
+  margin-left: 200px;
+}
+
+.rocket-detail {
+  position: relative;
+  float: left;
+  color: #ddd;
+}
+
+.avail-detail {
+  position: relative;
+  float: left;
+  color: #ddd;
+  margin-left: 200px;
+  z-index: 1;
+}
 .rocket-title {
-  position: absolute;
-  color: white;
-  font-size: 96px;
-  text-align: center;
-  padding: 200px;
+  position: relative;
+  z-index: 1;
+  float: left;
+  margin-left: 200px;
+  color: #ddd;
+  font-size: 45px;
+  height: 50px;
+  width: 30%;
+}
+
+.rocket-type {
+  position: relative;
+  float: left;
+  z-index: 1;
+  margin-left: 200px;
+  color: #ddd;
+  width: 30%;
+  font-size: 18px;
 }
 
 .profile-item {
@@ -235,6 +377,7 @@ button:hover {
 
 // .profile-text {
 .background-image {
+  src: image-url("back-5.jpg");
   position: absolute;
   left: 11px;
   width: 990px;
@@ -629,14 +772,15 @@ button:hover {
   position: relative;
   margin-left: 200px;
   background-color: black;
+  margin-top: 400px;
 }
 
 .rating-show {
   color: #ddd;
 }
 
-#test-ratings {
-  color: magenta;
+.rating-body {
+  color: #ddd;
 }
 .group:after {
   content: "";

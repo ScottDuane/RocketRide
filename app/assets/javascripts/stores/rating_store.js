@@ -19,6 +19,16 @@
       return rocket_ratings;
     },
 
+    findAverage: function(rocket) {
+      var ratings = RatingsStore.findByRocketId(rocket.id);
+      var total = 0;
+      ratings.forEach(function(rating) {
+        total += rating.rating;
+      });
+
+      return total/ratings.length;
+    },
+
     resetRatings: function(ratings) {
       _ratings = ratings;
     },

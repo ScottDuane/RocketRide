@@ -961,6 +961,20 @@ button:hover {
 .rating-body {
   color: #ddd;
 }
+
+#rocket-cap {
+  width: 100px;
+  display: inline;
+  margin-left: 179px;
+  height: 45px;
+}
+
+.cap-label {
+  font-size: 24px;
+  color: #ddd;
+  padding-left: 210px;
+  width: 42%;
+}
 .group:after {
   content: "";
   display: table;

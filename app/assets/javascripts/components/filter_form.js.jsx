@@ -5,31 +5,46 @@ var FilterForm = React.createClass ({
   },
 
   handleCheckChange: function(e) {
+
     if(e.target.checked){
       this.types.push(e.target.value);
     } else {
       var idx = this.types.indexOf(e.target.value);
       this.types.splice(idx, 1);
     }
-    FilterActions.updateTypes(this.types);
+
+    if(types.length === 0) {
+      FilterActions.updateTypes(["Constitution class starship", "Galaxy class starship", "Freightor", "Shuttlecraft"]);
+    } else {
+      FilterActions.updateTypes(this.types);
+    }
   },
 
   handleStartChange: function(e) {
     e.preventDefault();
-    FilterActions.updateStart(e.target.value);
+    if(e.target.value === "") {
+      var start = new Date("January 1, 1000");
+      FilterActions.updateStart(start);
+    } else {
+      FilterActions.updateStart(e.target.value);
+    }
   },
 
   handleEndChange: function(e) {
-
     e.preventDefault();
-    
-    FilterActions.updateEnd(e.target.value);
+    if(e.target.value === ""){
+      var end = new Date("December 31, 3000");
+      FilterActions.updateEnd(end);
+    } else {
+      FilterActions.updateEnd(e.target.value);
+    }
   },
 
   handleCapacityChange: function(e) {
     e.preventDefault();
+    debugger;
     if(e.target.value === "") {
-      FilterActions.updateCapacity(e.target.value);
+      FilterActions.updateCapacity(0);
     } else {
       FilterActions.updateCapacity(parseInt(e.target.value));
     }

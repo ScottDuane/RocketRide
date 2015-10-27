@@ -10,13 +10,6 @@ window.RocketForm = React.createClass ({
       return {captain_id: window.CURRENT_USER_ID, rocket_type: "Galaxy class starship"}
   },
 
-  // componentDidMount: function() {
-  //   document.getElementById('photoButton').addEventListener('click', function() {
-  //     cloudinary.openUploadWidget({upload_preset: "dmowg49ys"}, function(photo) {
-  //       this.setState({image_url: photo.url});
-  //     });
-  //   })
-  // }
   createRocket: function () {
 
     ApiUtil.createRocket(this.state);
@@ -45,6 +38,9 @@ window.RocketForm = React.createClass ({
     this.setState({avail_end: end});
   },
 
+  handleCapChange: function(e) {
+    this.setState({capacity: e.target.value});
+  },
   handlePhotoUpload: function(e) {
     e.preventDefault();
     cloudinary.openUploadWidget({upload_preset: "zvecaalc"}, function(error, photo) {
@@ -73,8 +69,6 @@ window.RocketForm = React.createClass ({
               <div className="create-row" className="create-form-header">
                 Share the love.  List your spacecraft.
               </div>
-
-
               <div className="create-row">
                 <div className="create-label-container">
                   <label for="rocket-name" className="create-label">What's the name of your craft?</label>
@@ -128,6 +122,10 @@ window.RocketForm = React.createClass ({
                 </div>
               </div>
 
+              <div className="create-row">
+                <label for="create-cap" className="cap-label">How many passengers can you accommodate?</label>
+                <input type="number" min="0" className="create-input" id="rocket-cap" onChange={this.handleCapChange} />
+              </div>
                 <div className="create-row">
                   <div className="create-label-container">
                     <label for="upload-button" className="create-label">Show off your craft with a nice photo.</label>

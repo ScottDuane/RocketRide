@@ -4,6 +4,8 @@ window.RocketIndex = React.createClass ({
   mixins: [React.addons.ReactCSSTransitionGroup],
 
   getInitialState: function() {
+    ApiUtil.fetchAllRockets();
+    ApiUtil.fetchAllUsers();
     return {rockets: RocketStore.all()}
   },
 
@@ -13,8 +15,7 @@ window.RocketIndex = React.createClass ({
 
   componentDidMount: function() {
     RocketStore.addIndexChangeListener(this._onChange);
-    ApiUtil.fetchAllRockets();
-    ApiUtil.fetchAllUsers();
+
   },
 
   componentWillUnmount: function() {
@@ -22,16 +23,12 @@ window.RocketIndex = React.createClass ({
 
   },
   _onChange: function() {
-    if(RocketStore.filteredByDateOrCap()) {
-      this.setState({rockets: RocketStore.filteredRockets()});
-    } else {
-      this.setState({rockets: RocketStore.all()});
-    }
+    this.setState({rockets: RocketStore.filteredRockets()});
   },
 
   render: function() {
     var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
-    // debugger;
+    
     var Link = ReactRouter.Link;
     var userURL = 'users/'+CURRENT_USER_ID;
     return (<div className="rocket-index-master">

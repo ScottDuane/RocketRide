@@ -4,125 +4,57 @@
 
   var _rockets = [];
   var _filteredRockets = [];
-  // var _filteredByDateOrCap = [];
-  var filterSum = 0;
-  var typeFilter = false;
-  var capFilter = false;
-  var startFilter = false;
-  var endFilter = false;
+  var typeFilter = ["Constitution class starship", "Galaxy class starship", "Shuttlecraft", "Freightor"];
+  var capFilter = 0;
+  var endFilter = new Date("December 31, 5000");
+  var startFilter = new Date("January 1, 1000");
+  var initFilter = false;
 
   window.RocketStore = $.extend({}, EventEmitter.prototype, {
     all: function() {
+      // debugger;
       return _rockets.slice(0);
     },
 
     filteredRockets: function() {
-      return _filteredRockets.slice(0);
-    },
-
-    dateFilter: function() {
-      startFilter && endFilter;
-    },
-
-    filteredByDateOrCap: function() {
-      return capFilter || RocketStore.dateFilter();
-    },
-
-    filtered: function() {
-      return RocketStore.filteredByDateOrCap() || typeFilter;
+      // debugger;
+      if(initFilter) {
+        return _filteredRockets.slice(0);
+      } else {
+        return _rockets.slice(0);
+      }
     },
 
     filterByStart: function(start) {
-      var startingRockets;
-      if(RocketStore.filteredByDateOrCap()) {
-        startingRockets = RocketStore.filteredRockets();
-      } else {
-        startingRockets = RocketStore.all();
-      }
-      // 
-      // if(start === "") {
-      //   startFilter =
-      // }
-      var newFiltered = [];
-      startingRockets.forEach(function(rocket) {
-        console.log(rocket);
-        if(rocket.avail_start <= start) {
-
-          newFiltered.push(rocket);
-        }
-      });
-      filterSum++;
-      _filteredRockets = newFiltered;
+      startFilter = start;
+      RocketStore.filterRockets();
     },
 
     filterByEnd: function(end) {
-      var startingRockets;
-      if(RocketStore.filteredByDateOrCap()) {
-        startingRockets = RocketStore.filteredRockets();
-      } else {
-        startingRockets = RocketStore.all();
-      }
-
-      var newFiltered = [];
-      startingRockets.forEach(function(rocket) {
-        if(rocket.avail_end >= end) {
-          newFiltered.push(rocket);
-        }
-      });
-
-      endFilter = true;
-      _filteredRockets = newFiltered;
+      endFilter = end;
+      RocketStore.filterRockets();
     },
 
     filterByType: function(types) {
-      var startingRockets;
-      if(RocketStore.filtered()) {
-        startingRockets = RocketStore.filteredRockets();
-      } else {
-        startingRockets = RocketStore.all();
-      }
-
-      debugger;
-
-      if(types.length === 0) {
-        _filteredRockets = startingRockets;
-        typeFilter = false;
-      } else {
-        var newFiltered = [];
-        startingRockets.forEach(function(rocket) {
-          if(types.indexOf(rocket.rocket_type) > -1) {
-            newFiltered.push(rocket);
-          }
-        });
-        typeFilter = true;
-        _filteredRockets = newFiltered;
-      }
+      typeFilter = types;
+      RocketStore.filterRockets();
     },
 
     filterByCapacity: function(capacity) {
-      var startingRockets;
-      // debugger;
-      if(RocketStore.filtered()) {
-        startingRockets = RocketStore.filteredRockets();
-      } else {
-        startingRockets = RocketStore.all();
-      }
+      capFilter = capacity;
+      RocketStore.filterRockets();
+    },
 
-      if(capacity === "") {
-        _filteredRockets = startingRockets;
-        capFilter = false;
-      } else {
-        capFilter = true;
-        var newFiltered = [];
-
-        startingRockets.forEach(function(rocket) {
-          if(rocket.capacity >= capacity) {
-            newFiltered.push(rocket);
-          }
-        });
-
-        _filteredRockets = newFiltered;
-      }
+    filterRockets: function() {
+      var myFilteredRockets = [];
+      RocketStore.all().forEach(function(rocket) {
+        debugger;
+        if((Date.parse(rocket.avail_start) >= Date.parse(startFilter) && Date.parse(rocket.avail_end) <= Date.parse(endFilter)) && (typeFilter.indexOf(rocket.rocket_type) > -1 && rocket.capacity >= capFilter) ) {
+          myFilteredRockets.push(rocket);
+        }
+      });
+      initFilter = true;
+      _filteredRockets = myFilteredRockets;
     },
 
     resetRockets: function(rockets) {

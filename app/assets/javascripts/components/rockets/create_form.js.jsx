@@ -7,7 +7,7 @@ window.RocketForm = React.createClass ({
   getInitialState: function() {
       this.photo_src = "assets/spaceship_default.png";
       this.photo_uploaded = false;
-      return {captain_id: window.CURRENT_USER_ID}
+      return {captain_id: window.CURRENT_USER_ID, rocket_type: "Galaxy class starship"}
   },
 
   // componentDidMount: function() {
@@ -18,6 +18,7 @@ window.RocketForm = React.createClass ({
   //   })
   // }
   createRocket: function () {
+
     ApiUtil.createRocket(this.state);
     this.props.history.pushState(null, '/');
   },

@@ -1,6 +1,7 @@
 var UserProfile = React.createClass({
   render: function() {
     var currentUser = UserStore.findById(window.CURRENT_USER_ID).username || "";
+
     return (
       <div>
       <Navbar />
@@ -9,10 +10,7 @@ var UserProfile = React.createClass({
         <div className="res-index-container">
           <OutgoingReservationIndex />
         </div>
-        <div className="rocket-index-container">
-          You've Listed Spacecraft.
-          <MyRocketList />
-        </div>
+        <MyRocketList />
       </img>
 
     </div>);

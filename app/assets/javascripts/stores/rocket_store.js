@@ -8,7 +8,8 @@
   var filterSum = 0;
   var typeFilter = false;
   var capFilter = false;
-  var dateFilter = false;
+  var startFilter = false;
+  var endFilter = false;
 
   window.RocketStore = $.extend({}, EventEmitter.prototype, {
     all: function() {
@@ -19,8 +20,12 @@
       return _filteredRockets.slice(0);
     },
 
+    dateFilter: function() {
+      startFilter && endFilter;
+    },
+
     filteredByDateOrCap: function() {
-      return capFilter || dateFilter;
+      return capFilter || RocketStore.dateFilter();
     },
 
     filtered: function() {
@@ -29,13 +34,15 @@
 
     filterByStart: function(start) {
       var startingRockets;
-      if(filterSum > 0) {
+      if(RocketStore.filteredByDateOrCap()) {
         startingRockets = RocketStore.filteredRockets();
       } else {
         startingRockets = RocketStore.all();
       }
-
-      // debugger;
+      // 
+      // if(start === "") {
+      //   startFilter =
+      // }
       var newFiltered = [];
       startingRockets.forEach(function(rocket) {
         console.log(rocket);
@@ -50,7 +57,7 @@
 
     filterByEnd: function(end) {
       var startingRockets;
-      if(filterSum > 0) {
+      if(RocketStore.filteredByDateOrCap()) {
         startingRockets = RocketStore.filteredRockets();
       } else {
         startingRockets = RocketStore.all();
@@ -62,7 +69,8 @@
           newFiltered.push(rocket);
         }
       });
-      filterSum++;
+
+      endFilter = true;
       _filteredRockets = newFiltered;
     },
 

@@ -38,19 +38,19 @@ var RatingForm = React.createClass({
     return(
       <div className="rating-form">
         <form onSubmit={this.handleSubmit}>
-          <label>Rating</label>
-          <br/>
-          <input type="number" onChange={this.handleRatingChange}/>
-          <br/>
+          <label className="rating-label">Rate This Craft</label>
+          <input type="number" min="1" max="5" className="rating-input" onChange={this.handleRatingChange}/>
+          <br />
 
-          <label>Did you love or hate your ride?  Tell us.</label>
+          <label className="rating-label">Did you love or hate your ride?  Tell us.</label>
           <br/>
           <textarea
-            cols='30'
+            cols='50'
             rows='10'
+            className="rating-input-body"
             onChange={this.handleBodyChange}></textarea>
           <br/>
-          <input type="submit"/>
+          <input id="rating-submit" type="submit"/>
         </form>
 
       </div>);

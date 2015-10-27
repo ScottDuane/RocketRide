@@ -9,7 +9,7 @@ class Api::RocketsController < ApplicationController
   end
 
   def rocket_params
-    params.permit(:rocket_name, :rocket_type, :captain_id, :avail_start, :avail_end, :image_url, :capacity)
+    params.permit(:rocket_name, :rocket_type, :captain_id, :avail_start, :avail_end, :image_url, :capacity, :description)
   end
 
 end

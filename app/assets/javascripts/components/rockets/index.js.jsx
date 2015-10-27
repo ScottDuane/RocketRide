@@ -22,7 +22,7 @@ window.RocketIndex = React.createClass ({
 
   },
   _onChange: function() {
-    if(RocketStore.filtered()) {
+    if(RocketStore.filteredByDateOrCap()) {
       this.setState({rockets: RocketStore.filteredRockets()});
     } else {
       this.setState({rockets: RocketStore.all()});

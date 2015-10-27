@@ -18,11 +18,24 @@ var MyRocketList = React.createClass({
   },
 
   render: function() {
-    return (
-      <div>
-        {this.state.rockets.map(function(rocket){
-          return (<RocketProfileItem rocket={rocket} key={rocket.id}/>);
-        })}
-      </div>);
+    var Link = ReactRouter.Link;
+    if(this.state.rockets.length === 0) {
+      return(
+        <div>
+          <p className="rocket-list-title">You Haven't Listed Any Spacecraft.</p>
+          <Link to="rockets/new"><button className="list-rocket-button">List a Craft</button></Link>
+        </div>
+      )
+    } else {
+      return (
+        <div className="rocket-list">
+          <p className="rocket-list-title">You've Listed Spacecraft.</p>
+          {this.state.rockets.map(function(rocket){
+            return (<RocketProfileItem rocket={rocket} key={rocket.id}/>);
+          })}
+        </div>);
+    }
+
+
   }
 });

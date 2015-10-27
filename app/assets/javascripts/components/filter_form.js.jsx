@@ -22,7 +22,7 @@ var FilterForm = React.createClass ({
   handleEndChange: function(e) {
 
     e.preventDefault();
-    debugger;
+    
     FilterActions.updateEnd(e.target.value);
   },
 
@@ -47,27 +47,6 @@ var FilterForm = React.createClass ({
               <input id="end-date" className="date-input" type="date" onChange={this.handleEndChange} />
               <label for="capacity" className="capacity-label">Capacity</label>
               <input type="number" className="capacity-input" onChange={this.handleCapacityChange} />
-            </div>
-            <br />
-            <div className="filter-types">
-              <ul className="filter-list">
-                <li className="type-item">
-                  <input id="galaxy" className="type-select" type="checkbox" value='Galaxy class' onClick={this.handleCheckChange} />
-                  <label for="galaxy" className="type-label">Galaxy class</label>
-                </li>
-                <li className="type-item">
-                  <input id="constitution" className="type-select" type="checkbox" value='Constitution class' onClick={this.handleCheckChange} />
-                  <label for="constitution" className="type-label">Constitution class</label>
-                </li>
-                <li className="type-item">
-                  <input id="shuttlecraft" className="type-select" type="checkbox" value='Shuttlecraft' onClick={this.handleCheckChange} />
-                  <label for="shuttlecraft" className="type-label">Shuttlecraft</label>
-                </li>
-                <li className="type-item">
-                  <input id="freightor" className="type-select" type="checkbox" value='Freightor' onClick={this.handleCheckChange} />
-                  <label for="freightor" className="type-label">Freightor</label>
-                </li>
-              </ul>
             </div>
         </form>
       </div>

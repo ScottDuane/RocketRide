@@ -4,7 +4,12 @@
 
   var _rockets = [];
   var _filteredRockets = [];
+  // var _filteredByDateOrCap = [];
   var filterSum = 0;
+  var typeFilter = false;
+  var capFilter = false;
+  var dateFilter = false;
+
   window.RocketStore = $.extend({}, EventEmitter.prototype, {
     all: function() {
       return _rockets.slice(0);
@@ -14,17 +19,12 @@
       return _filteredRockets.slice(0);
     },
 
-    filterSum: function() {
-      var sum = 0;
-      _filters.forEach(function(count) {
-        sum += count;
-      });
-
-      return sum;
+    filteredByDateOrCap: function() {
+      return capFilter || dateFilter;
     },
 
-    filterReset: function() {
-      filterSum = 0;
+    filtered: function() {
+      return RocketStore.filteredByDateOrCap() || typeFilter;
     },
 
     filterByStart: function(start) {
@@ -35,7 +35,7 @@
         startingRockets = RocketStore.all();
       }
 
-      debugger;
+      // debugger;
       var newFiltered = [];
       startingRockets.forEach(function(rocket) {
         console.log(rocket);
@@ -68,20 +68,53 @@
 
     filterByType: function(types) {
       var startingRockets;
-      if(filterSum > 0) {
+      if(RocketStore.filtered()) {
         startingRockets = RocketStore.filteredRockets();
       } else {
         startingRockets = RocketStore.all();
       }
 
-      var newFiltered = [];
-      startingRockets.forEach(function(rocket) {
-        if(types.indexOf(rocket.rocket_type) > -1) {
-          newFiltered.push(rocket);
-        }
-      });
-      filterSum++;
-      _filteredRockets = newFiltered;
+      debugger;
+
+      if(types.length === 0) {
+        _filteredRockets = startingRockets;
+        typeFilter = false;
+      } else {
+        var newFiltered = [];
+        startingRockets.forEach(function(rocket) {
+          if(types.indexOf(rocket.rocket_type) > -1) {
+            newFiltered.push(rocket);
+          }
+        });
+        typeFilter = true;
+        _filteredRockets = newFiltered;
+      }
+    },
+
+    filterByCapacity: function(capacity) {
+      var startingRockets;
+      // debugger;
+      if(RocketStore.filtered()) {
+        startingRockets = RocketStore.filteredRockets();
+      } else {
+        startingRockets = RocketStore.all();
+      }
+
+      if(capacity === "") {
+        _filteredRockets = startingRockets;
+        capFilter = false;
+      } else {
+        capFilter = true;
+        var newFiltered = [];
+
+        startingRockets.forEach(function(rocket) {
+          if(rocket.capacity >= capacity) {
+            newFiltered.push(rocket);
+          }
+        });
+
+        _filteredRockets = newFiltered;
+      }
     },
 
     resetRockets: function(rockets) {
@@ -148,6 +181,12 @@
       case FilterConstants.UPDATE_TYPES:
         RocketStore.filterByType(payload.types);
         RocketStore.emit(ROCKETS_INDEX_CHANGE_EVENT);
+        break;
+
+      case FilterConstants.UPDATE_CAPACITY:
+        RocketStore.filterByCapacity(payload.capacity);
+        RocketStore.emit(ROCKETS_INDEX_CHANGE_EVENT);
+        break;
       }
     })
   });

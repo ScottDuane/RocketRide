@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       login(@user)
-      redirect_to :root  
+      redirect_to :root
     else
       flash.now[:errors] = @user.errors.full_messages
       render :new
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :image_url)
   end
 
 end

@@ -25,20 +25,25 @@ var IncomingIndexItem = React.createClass ({
   render: function() {
     var endText = "";
     var verb = "";
+
     if(this.state.status === 'pending') {
-      endText = <div><p>This reservation is <strong>pending.</strong></p><button onClick={this.handleApproval}>Approve</button><button onClick={this.handleDenial}>Deny</button></div>;
+      endText = <div key={this.props.reservation.id}><p>This reservation is <strong>pending.</strong></p><button onClick={this.handleApproval}>Approve</button><button onClick={this.handleDenial}>Deny</button></div>;
       verb = "requested";
     } else if(this.state.status === 'approved') {
-      endText = <div><button onClick={this.handleCancellation}>Cancel Reservation</button></div>;
+      endText = <div key={this.props.reservation.id}><button onClick={this.handleCancellation}>Cancel Reservation</button></div>;
       verb = "reserved";
     } else {
-      return <div></div>;
+      return (<div key={this.props.reservation.id}></div>);
     }
 
-    return
-      (<div className="inc-res-text">
-        <p>{this.creator_name} has {verb} a ride with you from {this.props.reservation.start_date} until {this.props.reservation.end_date}.
-        {endText}</p>
-      </div>);
+
+
+    var returnThing = <div className="inc-res-text">
+        <p>{this.creator_name} has {verb} a ride with you from {this.props.reservation.start_date} until {this.props.reservation.end_date}.</p>
+        {endText}
+      </div>;
+
+    debugger;
+    return returnThing;
   }
 });

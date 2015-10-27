@@ -4,19 +4,13 @@ var FilterForm = React.createClass ({
     return {};
   },
 
-  handleFilter: function(e) {
-    e.preventDefault();
-  },
-
-
   handleCheckChange: function(e) {
-    if(e.target.selected){
-        this.types.push(e.target.value);
+    if(e.target.checked){
+      this.types.push(e.target.value);
     } else {
       var idx = this.types.indexOf(e.target.value);
       this.types.splice(idx, 1);
     }
-
     FilterActions.updateTypes(this.types);
   },
 
@@ -26,65 +20,55 @@ var FilterForm = React.createClass ({
   },
 
   handleEndChange: function(e) {
+
     e.preventDefault();
+    debugger;
     FilterActions.updateEnd(e.target.value);
+  },
+
+  handleCapacityChange: function(e) {
+    e.preventDefault();
+    if(e.target.value === "") {
+      FilterActions.updateCapacity(e.target.value);
+    } else {
+      FilterActions.updateCapacity(parseInt(e.target.value));
+    }
   },
 
   render: function() {
 
     return (
-      <div className="filter-form" className="container group">
+      <div className="filter-form">
         <form>
-        <div className="row">
-          <div className="col-md-12">
-            <h5 className="filter-label"></h5>
-          </div>
-        </div>
-
-
-        <div className="row" className="date-row">
-          <div className="col-md-2">
-            <label className="start-date-label" for="start-date">Start Date</label>
-          </div>
-
-          <div className="col-md-2">
-            <input className="date-input" type="date" placeholder="Start date" onChange={this.handleStartChange} />
-          </div>
-
-          <div className="col-md-2">
-            <label className="end-date-label" for="end-date">End Date</label>
-          </div>
-
-          <div className="col-md-1">
-            <input className="date-input" type="date" onChange={this.handleEndChange} />
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-md-12" />
-        </div>
-        <div className="row" className="filter-types">
-            <div className="col-md-2">
-              <label for="galaxy" className="type-label">Galaxy class</label>
-              <input id="galaxy" className="type-select" type="checkbox" value='Galaxy class' onClick={this.handleCheckChange} />
+            <div className="date-row">
+              <label className="start-date-label" for="start-date">Start Date</label>
+              <input id="start-date" className="date-input" type="date" placeholder="Start date" onChange={this.handleStartChange} />
+              <label className="end-date-label" for="end-date">End Date</label>
+              <input id="end-date" className="date-input" type="date" onChange={this.handleEndChange} />
+              <label for="capacity" className="capacity-label">Capacity</label>
+              <input type="number" className="capacity-input" onChange={this.handleCapacityChange} />
             </div>
-
-            <div className="col-md-2">
-              <label for="constitution" className="type-label">Constitution class</label>
-              <input id="constitution" className="type-select" type="checkbox" value='Constitution class' onClick={this.handleCheckChange} />
+            <br />
+            <div className="filter-types">
+              <ul className="filter-list">
+                <li className="type-item">
+                  <input id="galaxy" className="type-select" type="checkbox" value='Galaxy class' onClick={this.handleCheckChange} />
+                  <label for="galaxy" className="type-label">Galaxy class</label>
+                </li>
+                <li className="type-item">
+                  <input id="constitution" className="type-select" type="checkbox" value='Constitution class' onClick={this.handleCheckChange} />
+                  <label for="constitution" className="type-label">Constitution class</label>
+                </li>
+                <li className="type-item">
+                  <input id="shuttlecraft" className="type-select" type="checkbox" value='Shuttlecraft' onClick={this.handleCheckChange} />
+                  <label for="shuttlecraft" className="type-label">Shuttlecraft</label>
+                </li>
+                <li className="type-item">
+                  <input id="freightor" className="type-select" type="checkbox" value='Freightor' onClick={this.handleCheckChange} />
+                  <label for="freightor" className="type-label">Freightor</label>
+                </li>
+              </ul>
             </div>
-
-            <div className="col-md-2">
-              <label for="shuttlecraft" className="type-label">Shuttlecraft</label>
-              <input id="shuttlecraft" className="type-select" type="checkbox" value='Shuttlecraft' onClick={this.handleCheckChange} />
-            </div>
-
-            <div className="col-md-2">
-              <label for="freightor" className="type-label">Freightor</label>
-              <input id="freightor" className="type-select" type="checkbox" value='Freightor' onClick={this.handleCheckChange} />
-            </div>
-
-        </div>
         </form>
       </div>
     );

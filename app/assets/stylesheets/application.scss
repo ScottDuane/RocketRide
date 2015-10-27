@@ -419,22 +419,22 @@ button:hover {
 }
 
 .filter-form {
-  position: absolute;
+  position: relative;
   width: 100%;
-  height: 175px;
+  height: 50px;
   margin: 0px;
   padding: 0px;
-  padding-left: 75px;
-  background-color: #000;
+  padding-left: 100px;
+  background-color: transparent;
   font-family: "Inconsolata";
   font-size: 15px;
-  color: #555;
-  // font-size: 24px;
-  color: #ccc;
+  color: #ddd;
   font-size: 15px;
-  background: #000 image-url("back-5.jpg") left center no-repeat;
 }
 
+.filter-form input {
+  z-index: 17;
+}
 // #cxs
 .filter-label {
   // font-family: "Noto Sans", sans-serif;
@@ -454,11 +454,15 @@ button:hover {
   // border: #999 solid 1px;
   color: #ccc;
   position: relative;
+  float: left;
+  text-align: left;
 }
 
 .start-date-label {
-  padding-top: 4px;
-  padding-left: 38px;
+  padding-top: 0px;
+  padding-left: 25px;
+  margin-right: 10px;
+  margin-top: 7px;
   overflow: hidden;
   font-size: 24px;
 }
@@ -466,6 +470,8 @@ button:hover {
 .end-date-label {
   padding-top: 4px;
   padding-left: 64px;
+  margin-left: 125px;
+  margin-right: 10px;
   overflow: hidden;
   font-size: 24px;
 }
@@ -477,28 +483,57 @@ button:hover {
   length: 100%;
   position: absolute;
   float: left;
+  padding-left: 8px;
+}
+
+.capacity-label {
+  font-size: 24px;
+  overflow: hidden;
+  margin-left: 186px;
+  margin-top: 0px;
+}
+
+.capacity-input {
+  width: 50px;
+  height: 40px;
+  border-radius: 5px;
+  margin-left: 10px;
+  color: #444;
+  padding-left: 10px;
+  position: absolute;
 }
 .filter-types {
 
-  position: relative;
+  position: absolute;
 
   // border-bottom: #999 solid 1px;
   // margin-top: 50px;
-  padding-top: 22px;
+  padding-top: 70px;
   padding-left: 41px;
   font-size: 18px;
 }
 
+.filter-list {
+  display: inline;
+}
+
 .type-select {
-  position: absolute;
+  position: relative;
+  float: left;
   display: block;
   padding-top: 2px;
 }
 
 .type-label {
-  position: absolute;
+  position: relative;
   display: block;
   padding-left: 15px;
+  padding-top: 1px;
+  margin-left: 4px;
+}
+
+.type-item {
+  display: inline-block;
 }
 .myNavbar {
   position: relative;
@@ -595,6 +630,11 @@ button:hover {
   width: 100%;
 }
 
+.type-dropdown {
+  font-family: "Inconsolata";
+  height: 10px;
+}
+
 .photo-upload-button {
   background-color: #cc99cc;
   height: 50px;
@@ -665,17 +705,23 @@ button:hover {
 
 .res-index-container {
   color: #ddd;
-  position: absolute;
+  position: relative;
   font-size: 24px;
   width: 40%;
-  margin-left: 10%;
+  margin-left: 200px;
+  margin-top: 20px;
+  float: left;
 }
 
 .rocket-index-container{
-  position: absolute;
+  position: relative;
+  font-size: 24px;
+  margin-left: 500px;
+  float: right;
+  margin-top: -25px;
   color: #ddd;
   width: 40%;
-  margin-left: 50%;
+
 }
 .res-button {
   color: #444;
@@ -708,7 +754,7 @@ button:hover {
 }
 
 .res-header {
-  font-size: 36px;
+  font-size: 24px;
   text-align: center;
 }
 

@@ -16,7 +16,14 @@ window.FilterActions = {
   updateTypes: function(types) {
     AppDispatcher.dispatch({
       actionType: FilterConstants.UPDATE_TYPES,
-      types: types
+      types: types, 
+    });
+  },
+
+  updateCapacity: function(capacity) {
+    AppDispatcher.dispatch({
+      actionType: FilterConstants.UPDATE_CAPACITY,
+      capacity: capacity
     });
   }
 

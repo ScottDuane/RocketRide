@@ -18,9 +18,19 @@ var OutgoingReservationIndex = React.createClass ({
   },
 
   render: function() {
+    var Link = ReactRouter.Link;
+    var headerText = "";
+    var indexLink = "";
+    if(this.state.reservations.length === 0) {
+      headerText = "You Haven't Made Any Reservations.";
+      indexLink = <Link to="/"><button className="index-button">Find A Craft</button></Link>;
+    } else {
+      headerText = "You've Made Reservations.";
+    }
     return (
     <div className="out-res-index">
-      <div className="res-header">You've Made Reservations.</div>
+      <div className="res-header">{headerText}</div>
+      {indexLink}
       {this.state.reservations.map(function(reservation){
         return (<OutgoingIndexItem reservation={reservation} key={reservation.id}/>);
       })}

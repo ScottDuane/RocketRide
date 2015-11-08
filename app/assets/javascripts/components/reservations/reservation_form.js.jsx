@@ -23,21 +23,21 @@ var ReservationForm = React.createClass ({
           <div class="col-md-6">
             <div class="panel panel-info">
               <div class="panel-heading">
-                <h4>Reservation Info</h4>
+                <h4 className="res-form-header">Reservation Info</h4>
               </div>
 
               <div class="panel-body">
                 <form role="form" onSubmit={this.handleSubmit}>
-                  <div class="form-group">
+                  <div className="start-input">
                     <label class="control-label" for="start-date">Starting Date</label> <br/>
                     <input type="date" name="reservation[start_date]" id="start-date" onChange={this.handleStartChange}/>
                   </div>
-                  <div class="form-group">
+                  <div className="end-input">
                     <label class="control-label" for="end-date">Ending Date</label> <br/>
                     <input type="date" name="reservation[end_date]" id="end-date" onChange={this.handleEndChange}/>
                   </div>
                   <div class="form-group">
-                    <input type="submit" value="Reserve Rocket!" />
+                    <input type="submit" id="res-submit" value="Request a Ride" />
                   </div>
                 </form>
               </div>

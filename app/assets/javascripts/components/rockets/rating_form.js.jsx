@@ -1,6 +1,6 @@
 var RatingForm = React.createClass({
   getInitialState: function () {
-    return {rater_id: window.CURRENT_USER_ID, rocket_id: this.props.rocket.id, body: "", rating: 5}
+    return {rater_id: window.CURRENT_USER_ID, rocket_id: this.props.rocket.id, body: "", rating: 0}
   },
 
   componentDidMount: function() {
@@ -13,6 +13,10 @@ var RatingForm = React.createClass({
 
   _onChange: function() {
     console.log(this.state);
+  },
+
+  handleRating: function(idx){
+    this.setState({ rating: idx });
   },
 
   handleCancel: function(e) {
@@ -38,12 +42,11 @@ var RatingForm = React.createClass({
     return(
       <div className="rating-form">
         <form onSubmit={this.handleSubmit}>
-          <label className="rating-label">Rate This Craft</label>
-          <input type="number" min="1" max="5" className="rating-input" onChange={this.handleRatingChange}/>
-          <br />
-
           <label className="rating-label">Did you love or hate your ride?  Tell us.</label>
           <br/>
+          <Stars clickable={true} rating={this.state.rating} size={'fa-o-2x'} clickHandler={this.handleRating} />
+          <br />
+          <br />
           <textarea
             cols='50'
             rows='10'

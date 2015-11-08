@@ -48,7 +48,7 @@
     filterRockets: function() {
       var myFilteredRockets = [];
       RocketStore.all().forEach(function(rocket) {
-        debugger;
+        // debugger;
         if((Date.parse(rocket.avail_start) >= Date.parse(startFilter) && Date.parse(rocket.avail_end) <= Date.parse(endFilter)) && (typeFilter.indexOf(rocket.rocket_type) > -1 && rocket.capacity >= capFilter) ) {
           myFilteredRockets.push(rocket);
         }

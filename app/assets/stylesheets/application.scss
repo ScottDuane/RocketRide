@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+@import "font-awesome-sprockets";
+@import "font-awesome";
 html, body, section, article,
 h1, h2, p, strong, em, a {
   margin: 0;
@@ -17,6 +18,10 @@ h1, h2, p, strong, em, a {
   height: 100%;
   width: 100%;
   font-family: "Inconsolata";
+}
+
+button:focus, button:active {
+  border: none;
 }
 
 ul, li {
@@ -226,6 +231,7 @@ button:hover {
   font-size: 24px;
   margin-top: 18px;
   margin-bottom: 25px;
+  padding-right: 5%;
 }
 
 .rocket-msg {
@@ -244,7 +250,8 @@ button:hover {
 .rocket-list {
   position: relative;
   float: right;
-  max-width: 40%;
+  padding-right: 10px;
+  width: 40%;
 }
 // Example gallery css
 .rocket-item {
@@ -365,6 +372,13 @@ button:hover {
   position: relative;
   float: left;
   color: #ddd;
+  min-height: 140px;
+  margin-left: 200px;
+  width: 35%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 40%;
+  min-width: 20%;
 }
 
 .avail-detail {
@@ -373,6 +387,8 @@ button:hover {
   color: #ddd;
   margin-left: 200px;
   z-index: 1;
+  max-width: 40%;
+  min-width: 20%;
 }
 .rocket-title {
   position: relative;
@@ -423,21 +439,60 @@ button:hover {
 
 .request-button {
   position: relative;
-  width: 250px;
+  width: 300px;
   height: 60px;
-  color: #ddd;
+  color: #444;
   background-color: #cc6666;
-
-  margin-left: 200px;
+  border: none;
+  margin-left: 40%;
   margin-top: 50px;
   font-size: 20px;
   border-radius: 15px;
+  float: left;
 }
 
 .request-button:hover {
   background-color: #ddd;
   border: none;
   color: #cc6666;
+}
+
+.res-form-header {
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.start-input {
+  display: inline-block;
+  float: left;
+  margin-left: 25px;
+}
+
+.end-input {
+  float: right;
+  margin-right: 30px;
+}
+
+#res-submit {
+  background: #cc6666;
+  color: #444;
+  width: 200px;
+  margin-top: 19px;
+  height: 43px;
+  border-radius: 15px;
+  border: none;
+  margin-left: 118px;
+}
+
+#res-submit:hover {
+  color: #ddd;
+}
+
+#end-date, #start-date {
+  border-radius: 10px;
+  background: #ddd;
 }
 
 .deny-cancel-res {
@@ -470,6 +525,14 @@ button:hover {
 
 .filter-form input {
   z-index: 17;
+}
+
+#filter-types-top {
+  margin-top: 50px;
+}
+
+#filter-types-bottom {
+  margin-top: 105px;
 }
 // #cxs
 .filter-label {
@@ -544,7 +607,7 @@ button:hover {
 
   // border-bottom: #999 solid 1px;
   // margin-top: 50px;
-  padding-top: 70px;
+  padding-top: 41px;
   padding-left: 41px;
   font-size: 18px;
 }
@@ -744,7 +807,7 @@ button:hover {
   position: relative;
   font-size: 24px;
   width: 40%;
-  margin-left: 200px;
+  margin-left: 160px;
   margin-top: 20px;
   float: left;
 }
@@ -792,6 +855,9 @@ button:hover {
 .res-header {
   font-size: 24px;
   text-align: center;
+  color: #ddd;
+  position: relative;
+  z-index: 2;
 }
 
 .out-res-index ul {
@@ -807,7 +873,7 @@ button:hover {
   position: relative;
   padding-bottom: 20px;
   text-align: center;
-
+  margin-left: 160px;
 }
 
 .rocket-index-container {
@@ -897,16 +963,16 @@ button:hover {
 }
 .rating-form {
   color: #ddd;
-  position: absolute;
+  position: relative;
   margin-left: 200px;
   background-color: black;
   margin-top: 75px;
-  width: 50%;
+  width: 45%;
   float: left;
 }
 
 .rating-label {
-  font-size: 18px;
+  font-size: 19px;
   margin-bottom: 15px;
   margin-right: 10px;
 }
@@ -924,20 +990,32 @@ button:hover {
   color: #444;
   border-radius: 10px;
   border: none;
+  padding: 5px;
 }
 
 .ratings-show {
   position: relative;
+  float: right;
+  margin-top: 70px;
+  width: 38%;
+}
+
+.ratings-list {
+  position: relative;
+  display: inline;
   float: left;
-  margin-left: 25%;
-  width: 48%;
+}
+
+.ratings-header {
+  font-size: 19px;
+  color: #ddd;
 }
 
 .rating-body {
   color: #ddd;
-  float: right;
+  float: left;
   position:relative;
-  margin-left: 105px;
+  margin-left: 10px;
 }
 #rating-submit {
   border-radius: 15px;
@@ -957,10 +1035,10 @@ button:hover {
 .rating-show {
   color: #ddd;
 }
-
-.rating-body {
-  color: #ddd;
-}
+//
+// .rating-body {
+//   color: #ddd;
+// }
 
 #rocket-cap {
   width: 100px;
@@ -974,6 +1052,59 @@ button:hover {
   color: #ddd;
   padding-left: 210px;
   width: 42%;
+}
+
+.index-button {
+  width: 200px;
+  height: 50px;
+  border: none;
+  background: #cc99cc;
+  color: #444;
+  font-size: 20px;
+  border-radius: 15px;
+  position: relative;
+  margin-left: 28%;
+  margin-top: 7%;
+}
+
+.index-button:hover {
+  color: #ddd;
+  border: none;
+
+}
+
+.list-rocket-button {
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 15px;
+  background-color: #fe9b00;
+  font-size: 20px;
+  color: #444;
+  margin-top: 3%;
+  margin-left: 25%;
+}
+
+.fa-2x {
+  font-size: 18px;
+  margin-left: -10px;
+}
+
+.user-mini-pic {
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+.rating-text {
+  margin-left: 45px;
+}
+
+.rating-num {
+  background: #ddd;
+  color: #444;
+  padding: 3px;
+  border-radius: 10px;
+  margin-right: 7px;
 }
 .group:after {
   content: "";

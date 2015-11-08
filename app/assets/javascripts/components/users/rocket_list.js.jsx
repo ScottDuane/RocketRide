@@ -21,7 +21,7 @@ var MyRocketList = React.createClass({
     var Link = ReactRouter.Link;
     if(this.state.rockets.length === 0) {
       return(
-        <div>
+        <div className="rocket-list">
           <p className="rocket-list-title">You Haven't Listed Any Spacecraft.</p>
           <Link to="rockets/new"><button className="list-rocket-button">List a Craft</button></Link>
         </div>

@@ -84,11 +84,15 @@ window.RocketForm = React.createClass ({
                 </div>
                 <div className="create-input-container">
                   <select id="rocket-type" onChange={this.handleTypeChange} className="type-dropdown">
-                    <option value="Galaxy class starship">Galaxy class starship</option>
-                    <option value="Constitution class starship">Constitution class starship</option>
+                    <option value="Galaxy class">Galaxy class starship</option>
+                    <option value="Constitution class">Constitution class starship</option>
                     <option value="Freightor">Freightor</option>
                     <option value="Firefly">Firefly</option>
                     <option value="Battlestar">Battlestar</option>
+                    <option value="Cube">Cube</option>
+                    <option value="Sphere">Sphere</option>
+                    <option value="Shuttlecraft">Shuttlecraft</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
               </div>

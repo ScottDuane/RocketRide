@@ -10,7 +10,7 @@ var RatingsShow = React.createClass({
           <ReactCSSTransitionGroup transitionName="animation" transitionEnterTimeout={500} transitionLeaveTimeout={300} >
           {this.props.ratings.map(function(rating) {
             var username = UserStore.findById(rating.rater_id).username;
-            var user_pic_url = UserStore.findById(rating.rater_id).img_url;
+            var user_pic_url = UserStore.findById(rating.rater_id).image_url;
             return <div>
             <li className="rating-body">
               <img src={user_pic_url} height="30" width="30" className="user-mini-pic"/>

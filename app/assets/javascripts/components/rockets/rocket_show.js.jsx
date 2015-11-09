@@ -36,6 +36,7 @@ var RocketShow = React.createClass ({
     UserStore.all().forEach(function(user) {
       if(user.id === this.rocket.captain_id) {
         this.captain = user.username;
+        this.captain_pic = user.image_url;
       }
     }.bind(this));
   },
@@ -43,6 +44,7 @@ var RocketShow = React.createClass ({
   render: function() {
     var imgURL = this.rocket.image_url || 'assets/spaceship_default.jpeg';
     var Link = ReactRouter.Link;
+    var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
     return (
       <div>
@@ -52,10 +54,8 @@ var RocketShow = React.createClass ({
         <div className="rocket-title">{this.rocket.rocket_name}</div>
         <div className="rocket-type">a {this.rocket.rocket_type}</div>
         <br />
-        <div className="captain-name">Captain: {this.captain}</div>
+        <div className="captain-name"><img src={this.captain_pic} height="50" width="50" className="captain-pic" /> {this.captain} says:</div>
         <div className="rocket-detail">{this.rocket.description}</div>
-        <div className="avail-detail">Available from {this.rocket.avail_start} until {this.rocket.avail_end}.</div>
-
              <Lightbox>
               <LightboxTrigger>
                   <button className="request-button">Request Reservation</button>

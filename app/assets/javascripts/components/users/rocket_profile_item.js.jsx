@@ -17,25 +17,28 @@ var RocketProfileItem = React.createClass({
   },
 
   render: function() {
-    var message = "";
+    var message = <div></div>;
     var rocket = this.props.rocket;
     if(this.state.reservations.length === 0) {
       message = <div className="rocket-msg">No reservations to show</div>
     }
 
-    //  debugger;
     return(
       <div className="profile-item">
-        <img src={this.props.rocket.image_url} className="rocket-index-pic" />
+
           <div className="inline-rocket-title">{this.props.rocket.rocket_name}</div>
-          {message}
-          
-          <ul>
-            {this.state.reservations.map(function(reservation){
-              return (<li><IncomingReservationIndex rocket={rocket} /></li>)
-            })}
-          </ul>
-        <br />
+          <br />
+            <Lightbox>
+              <LightboxTrigger>
+                <button className="view-res-button">View Reservations</button>
+              </LightboxTrigger>
+
+              <LightboxModal>
+                <IncomingReservationIndex rocket={rocket} key={rocket.id} />
+              </LightboxModal>
+            </Lightbox>
+
+        <img src={this.props.rocket.image_url} className="rocket-index-pic" />
       </div>
     )
   }

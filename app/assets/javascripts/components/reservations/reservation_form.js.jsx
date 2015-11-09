@@ -18,7 +18,7 @@ var ReservationForm = React.createClass ({
 
   render: function() {
     return(
-      <div>
+      <div className="reservation-form">
         <div class="row">
           <div class="col-md-6">
             <div class="panel panel-info">

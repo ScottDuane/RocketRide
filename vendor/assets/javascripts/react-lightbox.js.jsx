@@ -59,14 +59,16 @@ var LightboxModal = React.createClass({
                 this.props.children.props[j] = this.props[j];
             }
         }
+        var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
         if (this.props.display){
             return (
                 <div>
                     <div style={this.blackOverlayStyles} onClick={this.props.closeLightbox} />
                     <div style={this.whiteContentStyles}>
-
+                      <ReactCSSTransitionGroup transitionName="animation" transitionEnterTimeout={500} transitionLeaveTimeout={300} >
                         {this.props.children}
+                      </ReactCSSTransitionGroup>
                     </div>
             </div>
             );
@@ -127,7 +129,6 @@ var Lightbox = React.createClass({
             var childWithProps = React.addons.cloneWithProps(child, childProps);
             return childWithProps;
         }, this);
-
         return (
             <div>
                 {childrenWithProps}

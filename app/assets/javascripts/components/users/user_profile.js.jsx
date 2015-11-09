@@ -5,7 +5,7 @@ var UserProfile = React.createClass({
     return (
       <div>
       <Navbar />
-      <img src="assets/back-5.jpg" className="background-image">
+      <img src="images/back-5.jpg" className="background-image">
         <div className="greeting">Hey there, {currentUser}</div>
         <div className="res-index-container">
           <OutgoingReservationIndex />

@@ -21,6 +21,7 @@ var FilterForm = React.createClass ({
 
   handleStartChange: function(e) {
     e.preventDefault();
+    
     if(e.target.value === "") {
       var start = new Date("January 1, 1000");
       FilterActions.updateStart(start);
@@ -60,7 +61,7 @@ var FilterForm = React.createClass ({
               <label className="end-date-label" for="end-date">End Date</label>
               <input id="filter-end-date" className="date-input" type="date" onChange={this.handleEndChange} />
               <label for="capacity" className="capacity-label">Capacity</label>
-              <input type="number" className="capacity-input" onChange={this.handleCapacityChange} />
+              <input type="number" className="capacity-input" min="0" onChange={this.handleCapacityChange} />
             </div>
             <div className="filter-types" id="filter-types-top">
               <ul className="filter-list">

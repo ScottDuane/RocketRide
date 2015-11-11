@@ -6,8 +6,8 @@
   var _filteredRockets = [];
   var typeFilter = ["Constitution class starship", "Galaxy class starship", "Shuttlecraft", "Freightor"];
   var capFilter = 0;
-  var endFilter = new Date("December 31, 5000");
-  var startFilter = new Date("January 1, 1000");
+  var startFilter = new Date("December 31, 5000");
+  var endFilter = new Date("January 1, 1000");
   var initFilter = false;
 
   window.RocketStore = $.extend({}, EventEmitter.prototype, {
@@ -48,8 +48,8 @@
     filterRockets: function() {
       var myFilteredRockets = [];
       RocketStore.all().forEach(function(rocket) {
-        // debugger;
-        if((Date.parse(rocket.avail_start) >= Date.parse(startFilter) && Date.parse(rocket.avail_end) <= Date.parse(endFilter)) && (typeFilter.indexOf(rocket.rocket_type) > -1 && rocket.capacity >= capFilter) ) {
+          // debugger;
+        if((Date.parse(rocket.avail_start) <= Date.parse(startFilter) && Date.parse(rocket.avail_end) >= Date.parse(endFilter)) && (typeFilter.indexOf(rocket.rocket_type) > -1 && rocket.capacity >= capFilter) ) {
           myFilteredRockets.push(rocket);
         }
       });

@@ -11,11 +11,14 @@ window.RocketForm = React.createClass ({
   },
 
   createRocket: function () {
-
     ApiUtil.createRocket(this.state);
-    this.props.history.pushState(null, '/');
+    $('#congrat-button').click();
+
   },
 
+  clearForm: function() {
+    $('.create-input').val('');
+  },
   handleNameChange: function(e) {
     this.setState({rocket_name: e.target.value});
   },
@@ -60,6 +63,7 @@ window.RocketForm = React.createClass ({
       img_tag = <img src={this.photo_src} className="create-form-pic" />;
     }
 
+    user_url = "#/users/"+window.CURRENT_USER_ID
     return(
       <div>
       <Navbar />
@@ -150,6 +154,22 @@ window.RocketForm = React.createClass ({
                 </div>
               </form>
         </div>
+
+        <Lightbox>
+         <LightboxTrigger>
+          <button id="congrat-button">Congrat button</button>
+         </LightboxTrigger>
+         <LightboxModal>
+            <div>
+
+               <h1 className="congrats-box">Congrats!  Your craft has been listed.</ h1>
+              <ul className="congrats-list">
+               <li id="return-box-1"><Link to="/"><button className="nav-button" id="return-index-button">All Crafts</button></Link></li>
+               <li id="return-box-2"><Link to={user_url}><button className="nav-button" id="return-profile-button">Your Profile</button></Link></li>
+              </ul>
+            </div>
+         </LightboxModal>
+       </Lightbox>
       </img>
 
     </div>)

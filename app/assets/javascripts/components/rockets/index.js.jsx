@@ -6,7 +6,7 @@ window.RocketIndex = React.createClass ({
   getInitialState: function() {
     ApiUtil.fetchAllRockets();
     ApiUtil.fetchAllUsers();
-    return {rockets: RocketStore.all()}
+    return {rockets: RocketStore.all(), users: UserStore.all()}
   },
 
   logOut: function() {
@@ -15,20 +15,22 @@ window.RocketIndex = React.createClass ({
 
   componentDidMount: function() {
     RocketStore.addIndexChangeListener(this._onChange);
-
+    UserStore.addUserChangeListener(this._onChange);
   },
 
   componentWillUnmount: function() {
     RocketStore.removeIndexChangeListener(this._onChange);
-
+    UserStore.removeUserChangeListener(this._onChange);
   },
+
   _onChange: function() {
-    this.setState({rockets: RocketStore.filteredRockets()});
+    this.setState({rockets: RocketStore.filteredRockets(), users: UserStore.all()});
   },
 
   render: function() {
     var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
-    
+    var that = this;
+     
     var Link = ReactRouter.Link;
     var userURL = 'users/'+CURRENT_USER_ID;
     return (<div className="rocket-index-master">
@@ -42,7 +44,7 @@ window.RocketIndex = React.createClass ({
       <div id="rocket-index" className="row" className="rocket-index">
       <ReactCSSTransitionGroup transitionName="animation" transitionEnterTimeout={500} transitionLeaveTimeout={300} >
         {this.state.rockets.map(function(rocket){
-          return (<RocketIndexItem rocket={rocket} key={rocket.id}/>);
+          return (<RocketIndexItem users={that.state.users} rocket={rocket} key={rocket.id}/>);
         })}
       </ReactCSSTransitionGroup>
       </div>

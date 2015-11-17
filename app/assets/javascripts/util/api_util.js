@@ -17,7 +17,6 @@ window.ApiUtil = {
       method: 'post',
       data: rocketData,
       success: function(rocket) {
-        console.log("made a rocket");
         ApiActions.receiveRocket(rocket);
       },
       failure: function(err) {

@@ -1173,6 +1173,51 @@ button:hover {
 .captain-pic {
   border-radius: 15px;
 }
+
+#return-index-button {
+  background-color: #fe9b00;
+  color: #444;
+
+}
+
+#return-index-button:hover {
+  background-color: #444;
+  color: #fe9b00;
+}
+#return-profile-button {
+  background-color: #cc9999;
+  color: #444;
+
+}
+
+#return-profile-button:hover {
+  background-color: #444;
+  color: #cc9999;
+}
+#return-box-1 {
+  float: left;
+  margin-left: 7%;
+  background: none;
+}
+
+#return-box-2 {
+  float: right;
+  margin-right: 7%;
+  background: none;
+}
+.congrats-box {
+  font-size: 24px;
+  text-align: center;
+  background: none;
+}
+
+.congrats-list a, li {
+  background: none;
+}
+
+#congrat-button {
+  visibility: hidden;
+}
 .group:after {
   content: "";
   display: table;

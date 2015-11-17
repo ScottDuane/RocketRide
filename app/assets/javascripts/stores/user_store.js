@@ -27,7 +27,7 @@
     },
 
     removeUserChangeListener: function(callback) {
-      UserStore.removeListener(callback);
+      UserStore.removeListener(USERS_CHANGE_EVENT, callback);
     },
 
     dispatcherID: AppDispatcher.register(function(payload) {

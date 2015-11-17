@@ -258,8 +258,8 @@ button:hover {
 
     margin: 10px;
     padding: 10px;
-    height: 300px;
-    width: 400px;
+    height: 210px;
+    width: 280px;
     float: left;
     text-align: center;
     background: transparent;
@@ -271,8 +271,8 @@ button:hover {
     position: absolute;
     display: block;
     margin: 5px;
-    height: 300px;
-    width: 400px;
+    height: 210px;
+    width: 280px;
     float: top;
     border-radius: 5px;
     float: left;
@@ -287,8 +287,8 @@ button:hover {
 
   .rocket-photo {
     transition: 0.5s;
-    height: 310px;
-    width: 415px;
+    height: 216px;
+    width: 288px;
     opacity: 0.4;
   }
 }
@@ -325,23 +325,17 @@ button:hover {
 .rocket-info {
     position: absolute;
     display: none;
-    padding: 50px;
-    padding-top: 100px;
+    padding: 25px;
+    padding-top: 75px;
     text-align:center;
     font-weight: normal;
     color: #ddd;
     text-align: center;
-    // top: 0;
-    // bottom: 0;
-    // left: 0;
-    // right: 0;
-    // text-align: center;
-
-    margin-top: 24px;
-    width: 375px;
-    margin-left: 25px;
+    margin-top: 20px;
+    width: 250px;
+    margin-left: 20px;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 20px;
     font-family: "Inconsolata";
     z-index: 1;
     background-color: transparent;

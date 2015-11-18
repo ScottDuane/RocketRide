@@ -30,7 +30,7 @@ window.RocketIndex = React.createClass ({
   render: function() {
     var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
     var that = this;
-     
+
     var Link = ReactRouter.Link;
     var userURL = 'users/'+CURRENT_USER_ID;
     return (<div className="rocket-index-master">
@@ -46,8 +46,12 @@ window.RocketIndex = React.createClass ({
         {this.state.rockets.map(function(rocket){
           return (<RocketIndexItem users={that.state.users} rocket={rocket} key={rocket.id}/>);
         })}
+
       </ReactCSSTransitionGroup>
+
       </div>
+      <div className="index-stripe" height="200px" width="300px"></div>
+
   </div>);
   }
 });
